@@ -37,7 +37,7 @@ const Navbar = () => {
 	}, []);
 
 	return (
-		<nav className='flex justify-between items-center w-full fixed top-10 left-0 bg-transparent px-20 py-4'>
+		<nav className='flex justify-between items-center w-full fixed top-10 left-0 bg-transparent px-20 py-4 z-50'>
 			<div className='flex space-x-10 uppercase'>
 				<p
 					className={`text-textPrimary cursor-pointer flex items-center ${
@@ -90,7 +90,7 @@ const Navbar = () => {
 			<div className='flex space-x-10 uppercase'>
 				<p className='text-textPrimary'>blog</p>
 				<p className='text-textPrimary'>szkolenia</p>
-				<p className='text-textPrimary'>zarezerwuj</p>
+				<p className='text-textPrimary'>{`${`>zarezerwuj<`}`}</p>
 			</div>
 		</nav>
 	);

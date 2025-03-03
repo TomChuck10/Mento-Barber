@@ -5,6 +5,9 @@ import "slick-carousel/slick/slick-theme.css";
 import FacebookLogo from "../assets/facebook_logo.svg";
 import InstagramLogo from "../assets/instagram_logo.svg";
 import TikTokLogo from "../assets/tiktok_logo.svg";
+import Photo1 from "../assets/page1photo.png";
+import Photo2 from "../assets/page2photo.png";
+import PhotoJimmy from "../assets/page3jimmy.png";
 
 const HomePage = () => {
 	const settings = {
@@ -30,12 +33,12 @@ const HomePage = () => {
 			{/* Pierwszy ekran */}
 			<div
 				id='about'
-				className='flex flex-col min-h-screen px-20 pt-12 snap-start'>
+				className='relative flex flex-col min-h-screen px-20 pt-12 snap-start bg-bgPrimary z-10'>
 				<div className='flex flex-col items-start mt-60 leading-none max-w-screen-sm'>
 					<h1 className='text-textPrimary uppercase text-titleOne font-bold text-7xl'>
 						mento barber
 					</h1>
-					<h1 className='text-titleTwo uppercase font-bold text-9xl'>
+					<h1 className='text-titleTwo uppercase font-bold text-9xl text-orange-500'>
 						bochnia
 					</h1>
 					<p className='mt-4 max-w-xl text-lg text-gray-300'>
@@ -72,11 +75,16 @@ const HomePage = () => {
 						/>
 					</div>
 				</div>
+				<img
+					src={Photo1}
+					alt='Background'
+					className='absolute bottom-0 right-0 w-1/3 h-auto pointer-events-none'
+				/>
 			</div>
 			{/* Drugi ekran - cennik */}
 			<div
 				id='pricing'
-				className='h-screen flex items-center justify-end pr-24 bg-black text-orange-500 snap-start'>
+				className='relative h-screen flex items-center justify-end pr-6 bg-black text-orange-500 snap-start overflow-hidden'>
 				<div className='grid grid-cols-2 gap-6 p-10'>
 					{[
 						{ name: "STRZYŻENIE MĘSKIE", price: "80 PLN", time: "30 min" },
@@ -99,19 +107,30 @@ const HomePage = () => {
 						</div>
 					))}
 				</div>
+				<img
+					src={Photo2}
+					alt='Background'
+					className='absolute bottom-0 left-0 top-4 w-1/3 h-auto pointer-events-none'
+				/>
 			</div>
 			{/* Trzeci ekran - barberzy */}
 			<div
 				id='barbers'
-				className='h-screen flex items-center justify-center bg-darkBlue text-white snap-start'>
-				<div className='text-center p-10'>
-					<h1 className='text-6xl font-bold text-orange-500'>JIMMY</h1>
+				className='relative h-screen flex items-center justify-start p-10 bg-darkBlue text-white snap-start overflow-hidden'>
+				<div className='text-start p-10'>
+					<h1 className='text-9xl font-bold text-orange-500'>JIMMY</h1>
 					<p className='mt-4 max-w-lg'>
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin at
 						sollicitudin libero, vitae eleifend ante. Donec quis tellus
 						bibendum, tincidunt massa id, euismod nisl.
 					</p>
 				</div>
+				<img
+					src={PhotoJimmy}
+					alt='Background'
+					className='absolute bottom-0 right-0 w-1/2 h-auto pointer-events-none'
+					style={{ bottom: -240, right: -95 }}
+				/>
 			</div>
 			{/* Czwarty ekran - nasze prace */}
 			<div
