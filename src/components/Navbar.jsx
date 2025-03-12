@@ -38,44 +38,44 @@ const Navbar = () => {
 
 	return (
 		<nav className='flex justify-between items-center w-full fixed top-10 left-0 bg-transparent px-20 py-4 z-50'>
-			<div className='flex space-x-10 uppercase'>
+			<div className='flex space-x-10 uppercase text-lg'>
 				<p
 					className={`text-textPrimary cursor-pointer flex items-center ${
-						activeSection === "about" ? "text-orange-700" : ""
+						activeSection === "about" ? "text-prime" : ""
 					}`}
 					onClick={() => scrollToSection("about")}>
 					{activeSection === "about" && (
-						<span className='w-2 h-2 bg-orange-700 rounded-full mr-2'></span>
+						<span className='w-2 h-2 bg-prime rounded-full mr-2'></span>
 					)}
 					o nas
 				</p>
 				<p
 					className={`text-textPrimary cursor-pointer flex items-center ${
-						activeSection === "pricing" ? "text-orange-700" : ""
+						activeSection === "pricing" ? "text-prime" : ""
 					}`}
 					onClick={() => scrollToSection("pricing")}>
 					{activeSection === "pricing" && (
-						<span className='w-2 h-2 bg-orange-700 rounded-full mr-2'></span>
+						<span className='w-2 h-2 bg-prime rounded-full mr-2'></span>
 					)}
 					cennik
 				</p>
 				<p
 					className={`text-textPrimary cursor-pointer flex items-center ${
-						activeSection === "barbers" ? "text-orange-700" : ""
+						activeSection === "barbers" ? "text-prime" : ""
 					}`}
 					onClick={() => scrollToSection("barbers")}>
 					{activeSection === "barbers" && (
-						<span className='w-2 h-2 bg-orange-700 rounded-full mr-2'></span>
+						<span className='w-2 h-2 bg-prime rounded-full mr-2'></span>
 					)}
 					barberzy
 				</p>
 				<p
 					className={`text-textPrimary cursor-pointer flex items-center ${
-						activeSection === "works" ? "text-orange-700" : ""
+						activeSection === "works" ? "text-prime" : ""
 					}`}
 					onClick={() => scrollToSection("works")}>
 					{activeSection === "works" && (
-						<span className='w-2 h-2 bg-orange-700 rounded-full mr-2'></span>
+						<span className='w-2 h-2 bg-prime rounded-full mr-2'></span>
 					)}
 					nasze prace
 				</p>
@@ -87,10 +87,12 @@ const Navbar = () => {
 					style={{ height: "80px", marginTop: "10px" }}
 				/>
 			</div>
-			<div className='flex space-x-10 uppercase'>
-				<p className='text-textPrimary'>blog</p>
-				<p className='text-textPrimary'>szkolenia</p>
-				<p className='text-textPrimary'>{`${`>zarezerwuj<`}`}</p>
+			<div className='flex space-x-10 uppercase text-lg'>
+				<p className='text-textPrimary cursor-pointer'>blog</p>
+				<p className='text-textPrimary cursor-pointer'>szkolenia</p>
+				<p className='text-prime cursor-pointer flex items-center gap-2'>
+					<span>{`>`}</span> zarezerwuj <span>{`<`}</span>
+				</p>
 			</div>
 		</nav>
 	);

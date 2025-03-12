@@ -107,7 +107,7 @@ const HomePage = () => {
 			{/* Drugi ekran - cennik */}
 			<div
 				id='pricing'
-				className='relative h-screen flex  items-center justify-end pt-[50px] bg-black text-orange-500 snap-start overflow-hidden'>
+				className='relative h-screen flex  items-center justify-end pt-[50px] bg-black text-prime snap-start overflow-hidden'>
 				<div className='grid grid-cols-2 gap-6 pr-[98px]'>
 					{[
 						{ name: "STRZYŻENIE MĘSKIE", price: "80 PLN", time: "30 min" },
@@ -121,8 +121,8 @@ const HomePage = () => {
 					].map((item, index) => (
 						<div
 							key={index}
-							className='p-4 text-start w-96 text-orange-500 border-2 border-orange-500 rounded-md transition-all duration-300 
-                   hover:border-orange-400 hover:shadow-[0_0_15px_rgba(255,120,0,0.8)] cursor-pointer'>
+							className='p-4 text-start w-96 text-prime border-2 border-prime border-opacity-[0.5] rounded-md transition-all duration-300 
+                   hover:border-prime hover:shadow-[0_0_15px_rgba(255,120,0,0.8)] cursor-pointer'>
 							<h3 className='font-bold'>{item.name}</h3>
 							<p className='text-gray-300'>
 								{item.price} | {item.time}

@@ -6,6 +6,7 @@ export default {
 			colors: {
 				textPrimary: "#EBE6E1",
 				bgPrimary: "#0B0C0F",
+				prime: "#E67543",
 			},
 			fontSize: {
 				titleOne: "70px",
