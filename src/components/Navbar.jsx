@@ -38,7 +38,7 @@ const Navbar = () => {
 
 	return (
 		<nav className='flex justify-between items-center w-full fixed top-10 left-0 bg-transparent px-20 py-4 z-50'>
-			<div className='flex space-x-10 uppercase text-lg'>
+			<div className='flex space-x-[32px] uppercase text-lg'>
 				<p
 					className={`text-textPrimary cursor-pointer flex items-center ${
 						activeSection === "about" ? "text-prime" : ""
@@ -81,19 +81,27 @@ const Navbar = () => {
 				</p>
 			</div>
 			<div className='flex justify-center absolute left-1/2 transform -translate-x-1/2'>
-				<img
-					src={Logo}
-					alt='Vite Icon'
-					style={{ height: "80px", marginTop: "10px" }}
-				/>
+				<img src={Logo} alt='Vite Icon' className='logo' />
 			</div>
-			<div className='flex space-x-10 uppercase text-lg'>
+			<div className='flex space-x-[32px] uppercase text-lg'>
 				<p className='text-textPrimary cursor-pointer'>blog</p>
 				<p className='text-textPrimary cursor-pointer'>szkolenia</p>
 				<p className='text-prime cursor-pointer flex items-center gap-2'>
 					<span>{`>`}</span> zarezerwuj <span>{`<`}</span>
 				</p>
 			</div>
+			<style>{`
+				.logo {
+					height: 80px;
+					margin-top: -10px;
+				}
+				@media (min-width: 1800px) {
+					.logo {
+						height: 140px;
+						margin-top: 20px;
+					}
+				}
+			`}</style>
 		</nav>
 	);
 };

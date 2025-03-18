@@ -25,14 +25,15 @@ const Barber3 = () => {
 			</div>
 			<div className='absolute w-full left-0 right-0 z-1' style={{ zIndex: 1 }}>
 				<h1
-					className='text-9xl font-bold text-orange-500 text-center'
+					className='font-bold uppercase text-center'
 					style={{
-						fontSize: "30rem", //37.5rem
+						fontSize: "30vw",
 						fontWeight: "bold",
-						textTransform: "uppercase",
 						color: "transparent",
 						WebkitTextStroke: "4px #ff6600",
 						opacity: 0.05,
+						width: "100%",
+						whiteSpace: "nowrap",
 					}}>
 					JIMMY
 				</h1>
