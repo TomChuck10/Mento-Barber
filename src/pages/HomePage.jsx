@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+
 import Navbar from "../components/Navbar";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -33,6 +35,33 @@ import PhotoJimmy from "../assets/page3jimmy.png";
 import Texture from "../assets/texture.png";
 
 const HomePage = () => {
+	const [activeSection, setActiveSection] = useState("about");
+
+	useEffect(() => {
+		const sections = document.querySelectorAll("[id]"); // Pobieramy wszystkie sekcje z `id`
+
+		const handleScroll = () => {
+			let currentSection = "about"; // Domyślna wartość
+
+			sections.forEach(section => {
+				const rect = section.getBoundingClientRect();
+				if (
+					rect.top <= window.innerHeight / 3 &&
+					rect.bottom >= window.innerHeight / 3
+				) {
+					currentSection = section.id;
+				}
+			});
+
+			setActiveSection(currentSection);
+		};
+
+		window.addEventListener("scroll", handleScroll);
+		handleScroll(); // Sprawdzenie po załadowaniu
+
+		return () => window.removeEventListener("scroll", handleScroll);
+	}, []);
+
 	const settings = {
 		dots: false,
 		infinite: true,
@@ -50,6 +79,8 @@ const HomePage = () => {
 		...settings,
 		rtl: true,
 	};
+
+	console.log("active section", activeSection);
 
 	return (
 		<div className='h-screen overflow-y-scroll snap-y snap-mandatory'>
