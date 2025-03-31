@@ -33,7 +33,11 @@ const Navbar = () => {
 	}, [location]);
 
 	useEffect(() => {
-		if (location.pathname === "/training") {
+		if (
+			location.pathname === "/training" ||
+			location.pathname === "/blog" ||
+			location.pathname === "/blog/boy-haircut"
+		) {
 			setActiveSection("");
 		}
 	}, [location.pathname]);
@@ -114,7 +118,19 @@ const Navbar = () => {
 				</Link>
 			</div>
 			<div className='flex space-x-[32px] uppercase text-lg'>
-				<p className='text-textPrimary cursor-pointer'>blog</p>
+				<Link to='/blog'>
+					{location.pathname === "/blog" ||
+					location.pathname === "/blog/boy-haircut" ? (
+						<p
+							className='cursor-pointer flex items-center text-prime
+						'>
+							<span className='w-2 h-2 bg-prime rounded-full mr-2'></span>
+							blog
+						</p>
+					) : (
+						<p className='text-textPrimary cursor-pointer'>blog</p>
+					)}
+				</Link>
 				<Link to='/training'>
 					{location.pathname === "/training" ? (
 						<p

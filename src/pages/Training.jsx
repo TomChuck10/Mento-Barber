@@ -5,22 +5,32 @@ import Navbar from "../components/Navbar";
 import Texture from "../assets/texture.png";
 import Gradient from "../assets/gradient.svg";
 
+// Assets
+import ShortHair from "../assets/shortHair.png";
+import LongHair from "../assets/longHair.png";
+import Beard from "../assets/beard.png";
+
 const Training = () => {
 	const [activePanel, setActivePanel] = useState(0);
 
 	const data = [
 		{
+			photo: ShortHair,
 			title: "Krótkie włosy + cieniowanie od zera (fade)",
 			description:
 				"Perfekcyjny fade to podstawa nowoczesnego barberingu. W tym panelu skupimy się na technice cieniowania od zera, precyzyjnym przejściu tonalnym i odpowiednim doborze długości do kształtu głowy. Pokażemy, jak pracować z maszynką, trymerem i shaverem, by uzyskać idealne wykończenie. Szkolenie obejmuje zarówno teorię, jak i praktykę na modelach, abyś mógł doszlifować swoje umiejętności i zyskać pewność w pracy z krótkimi fryzurami.",
 		},
 		{
+			photo: LongHair,
 			title: "Długie włosy , praca na nożyczkach",
-			description: "Coś tam o strzyżeniu nożyczkami.",
+			description:
+				"Precyzyjna praca nożyczkami to podstawa przy dłuższych fryzurach. W tym panelu przepracujemy główne techniki strzyżenia, takie jak linia , gradacja , warstwa , aby dopasować fryzurę do kształtu głowy i struktury włosa. Nauczysz się, jak kontrolować napięcie pasma, jak pracować sekcyjnie i uzyskiwać płynne przejścia. Skupimy się na ergonomii ruchu oraz doborze narzędzi, byś mógł świadomie budować formę każdej fryzury.",
 		},
 		{
+			photo: Beard,
 			title: "Krótkie włosy , praca nmaszynką",
-			description: "Coś tam o strzyżeniu maszynką.",
+			description:
+				"Idealnie przycięta broda to nie tylko estetyka, ale i komfort klienta. W tym panelu nauczysz się cieniowania brody, jej konturowania i odpowiedniego skracania, by dopasować kształt do rysów twarzy. Skupimy się także na tonowaniu i pielęgnacji zarostu, aby uzyskać naturalny, zdrowy wygląd. Podczas praktycznej części dowiesz się, jak pracować maszynka , trymerem, brzytwą i nożyczkami, by broda wyglądała perfekcyjnie i była dopasowana do stylu klienta.",
 		},
 	];
 
@@ -71,14 +81,20 @@ const Training = () => {
 						<div
 							className='h-[75vh] w-[66%] bg-[#171D1F] flex flex-col'
 							style={{ boxShadow: "0px 8px 10px #00000099" }}>
-							<div className='h-[50%] bg-prime m-[32px]'></div>
-							<p className='text-[24px] text-prime mx-[32px]'>
+							<div className=' bg-white m-[32px] mb-[20px] rounded-[6px] overflow-hidden'>
+								<img
+									src={data[activePanel].photo}
+									alt='photo'
+									className='w-full h-full object-cover'
+								/>
+							</div>
+							<p className='title text-prime mx-[32px] text-[20px] '>
 								{data[activePanel].title}
 							</p>
-							<p className='text-[16px] text-white mx-[32px] mt-[10px] mb-[36px]'>
+							<p className='description text-[13px] text-white mx-[32px] mt-[10px] mb-[24px] '>
 								{data[activePanel].description}
 							</p>
-							<button className='border-2 border-prime rounded-[16px] mx-[32px] p-[18px] text-prime mb-[36px] mt-auto'>
+							<button className='button border-2 border-prime rounded-[16px] mx-[32px] p-[12px] text-prime mb-[36px] mt-auto'>
 								Umów szkolenie
 							</button>
 						</div>
@@ -91,6 +107,19 @@ const Training = () => {
 					style={{ top: "-50%" }}
 				/>
 			</div>
+			<style>{`
+				@media (min-width: 1800px) {
+					.title {
+						font-size: 24px;
+					}
+					.description {
+						font-size: 16px;
+					}
+					.button {
+						padding: 16px
+					}
+				}
+			`}</style>
 		</div>
 	);
 };

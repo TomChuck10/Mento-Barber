@@ -1,23 +1,24 @@
 import { useEffect, useState } from "react";
-
-import Navbar from "../components/Navbar";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import FacebookLogo from "../assets/facebook_logo.svg";
-import InstagramLogo from "../assets/instagram_logo.svg";
-import TikTokLogo from "../assets/tiktok_logo.svg";
-import Photo1 from "../assets/page1photo.png";
-import Photo2 from "../assets/page2photo.png";
-import Gradient from "../assets/gradient.svg";
 
 // Project imports
+import Navbar from "../components/Navbar";
+
+// Assets
 import Barber2 from "../components/Barber2";
 import Barber3 from "../components/Barber3";
 import Barber4 from "../components/Barber4";
 import Barber5 from "../components/Barber5";
 import Barber6 from "../components/Barber6";
 import Barber7 from "../components/Barber7";
+import FacebookLogo from "../assets/facebook_logo.svg";
+import InstagramLogo from "../assets/instagram_logo.svg";
+import TikTokLogo from "../assets/tiktok_logo.svg";
+import Photo1 from "../assets/page1photo.png";
+import Photo2 from "../assets/page2photo.png";
+import Gradient from "../assets/gradient.svg";
 
 // Haircuts
 import HaircutPhoto from "../assets/haircut1photo.jpg";
@@ -88,7 +89,7 @@ const HomePage = () => {
 			{/* Pierwszy ekran */}
 			<div
 				id='about'
-				className='relative flex flex-col min-h-screen px-20 pt-12 snap-start z-10 overflow-hidden'
+				className='relative flex flex-col min-h-screen px-20 snap-start z-10 overflow-hidden'
 				style={{
 					background: `linear-gradient(90deg, #090909, #091E23), url(${Texture})`,
 					backgroundSize: "cover",
@@ -249,9 +250,12 @@ const HomePage = () => {
 						JIMMY
 					</h1>
 					<p className='mt-4 max-w-[430px] text-[15px]'>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin at
-						sollicitudin libero, vitae eleifend ante. Donec quis tellus
-						bibendum, tincidunt massa id, euismod nisl.
+						Profesjonalizm to dla mnie podstawa – zawsze staram się zapewnić
+						najwyższą jakość usług, dzieląc się swoją wiedzą o pielęgnacji i
+						stylizacji. Choć kocham klasyczne cięcia, z radością eksperymentuję
+						z nowymi trendami. Moje podejście do pracy to nie tylko precyzyjne
+						cięcie, ale także dobra zabawa i pozytywna atmosfera, którą stwarzam
+						wokół siebie.
 					</p>
 				</div>
 				<div
