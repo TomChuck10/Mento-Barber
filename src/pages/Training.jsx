@@ -88,10 +88,10 @@ const Training = () => {
 									className='w-full h-full object-cover'
 								/>
 							</div>
-							<p className='title text-prime mx-[32px] text-[20px] '>
+							<p className='title text-prime mx-[32px] text-[20px]'>
 								{data[activePanel].title}
 							</p>
-							<p className='description text-[13px] text-white mx-[32px] mt-[10px] mb-[24px] '>
+							<p className='description text-[13px] text-white mx-[32px] mt-[10px] mb-[24px] font-light'>
 								{data[activePanel].description}
 							</p>
 							<button className='button border-2 border-prime rounded-[16px] mx-[32px] p-[12px] text-prime mb-[36px] mt-auto'>

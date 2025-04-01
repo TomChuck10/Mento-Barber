@@ -68,7 +68,7 @@ const Navbar = () => {
 
 	return (
 		<nav className='flex justify-between items-center w-full fixed top-10 left-0 bg-transparent px-[98px] py-4 z-50'>
-			<div className='flex space-x-[32px] uppercase text-lg'>
+			<div className='flex space-x-[32px] uppercase text-lg font-light'>
 				<p
 					className={`cursor-pointer flex items-center ${
 						activeSection === "about" ? "text-prime" : "text-textPrimary"
@@ -117,7 +117,7 @@ const Navbar = () => {
 					<img src={Logo} alt='Vite Icon' className='logo cursor-pointer' />
 				</Link>
 			</div>
-			<div className='flex space-x-[32px] uppercase text-lg'>
+			<div className='flex space-x-[32px] uppercase text-lg font-light'>
 				<Link to='/blog'>
 					{location.pathname === "/blog" ||
 					location.pathname === "/blog/boy-haircut" ? (

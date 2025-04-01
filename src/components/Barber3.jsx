@@ -26,7 +26,7 @@ const Barber3 = () => {
 					}}>
 					DAWID
 				</h1>
-				<p className='mt-4 max-w-[430px] text-[15px]'>
+				<p className='mt-4 max-w-[430px] text-[15px] font-light'>
 					Jestem Dawid, właściciel Mento Barber Shop. Nasz salon to więcej niż
 					fryzury i brody – to styl i klimat, który tworzymy każdego dnia.
 					Pracuję za fotelem i rozwijam zespół, byś zawsze wychodził od nas

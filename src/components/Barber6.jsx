@@ -26,7 +26,7 @@ const Barber6 = () => {
 					}}>
 					JULIA
 				</h1>
-				<p className='mt-4 max-w-[430px] text-[15px]'>
+				<p className='mt-4 max-w-[430px] text-[15px] font-light'>
 					Bardzo dobrze czuje sie w długich formach, pozwalaja na kreatywne
 					stylizacje, wymagające precyzyjnego cięcia i dopasowania do
 					indywidualnych potrzeb klienta. Uwielbiam tworzyc efekt &quot;messy

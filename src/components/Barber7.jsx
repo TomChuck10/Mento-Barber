@@ -26,7 +26,7 @@ const Barber7 = () => {
 					}}>
 					GABI
 				</h1>
-				<p className='mt-4 max-w-[430px] text-[15px]'>
+				<p className='mt-4 max-w-[430px] text-[15px] font-light'>
 					Lubię pracować nad fryzurami modernistycznymi, z teksturą, tak by
 					finalny efekt wyglądał świeżo i ciekawie. Tak by fryzura mogła
 					wyglądać dobrze z układaniem jak i bez. Bardzo dobrze czuję się przy

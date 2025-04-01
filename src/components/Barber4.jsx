@@ -26,7 +26,7 @@ const Barber4 = () => {
 					}}>
 					ANNA
 				</h1>
-				<p className='mt-4 max-w-[430px] text-[15px]'>
+				<p className='mt-4 max-w-[430px] text-[15px] font-light'>
 					Uwielbiam klasyczne strzyżenia, które łączą elegancję z nowoczesnym
 					stylem. Stale rozwijam się, biorąc udział w zawodach, a energia do
 					pracy płynie od ludzi, którzy mnie otaczają. Jeśli cenisz precyzję i

@@ -249,7 +249,7 @@ const HomePage = () => {
 						}}>
 						JIMMY
 					</h1>
-					<p className='mt-4 max-w-[430px] text-[15px]'>
+					<p className='mt-4 max-w-[430px] text-[15px] font-light'>
 						Profesjonalizm to dla mnie podstawa – zawsze staram się zapewnić
 						najwyższą jakość usług, dzieląc się swoją wiedzą o pielęgnacji i
 						stylizacji. Choć kocham klasyczne cięcia, z radością eksperymentuję
