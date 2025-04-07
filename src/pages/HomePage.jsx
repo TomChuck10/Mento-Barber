@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 // Project imports
 import Navbar from "../components/Navbar";
+import { useIsMobile } from "../Hooks/useIsMobile";
 
 // Assets
 import Barber2 from "../components/Barber2";
@@ -37,6 +38,8 @@ import PhotoJimmy from "../assets/page3jimmy.png";
 import Texture from "../assets/texture.png";
 
 const HomePage = () => {
+	const isMobile = useIsMobile();
+
 	const [activeSection, setActiveSection] = useState("about");
 
 	const handleScroll = useCallback(() => {
@@ -55,6 +58,8 @@ const HomePage = () => {
 
 		setActiveSection(currentSection);
 	}, []);
+
+	console.log("sa", isMobile);
 
 	useEffect(() => {
 		window.addEventListener("scroll", handleScroll);

@@ -1,16 +1,17 @@
 import { useState, useEffect } from "react";
-import { useLocation, useNavigate } from "react-router-dom"; // Import useNavigate
+import { useLocation, useNavigate, Link } from "react-router-dom";
 import Logo from "../assets/mento_logo.png";
-import { Link } from "react-router-dom";
+// import { FiMenu, FiX } from "react-icons/fi";
 
 const Navbar = () => {
 	const [activeSection, setActiveSection] = useState("about");
+	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 	const location = useLocation();
-	const navigate = useNavigate(); // Initialize navigate
+	const navigate = useNavigate();
 
 	const scrollToSection = sectionId => {
 		if (location.pathname !== "/") {
-			navigate("/", { state: { scrollTo: sectionId } }); // Przekazanie sekcji w stanie nawigacji
+			navigate("/", { state: { scrollTo: sectionId } });
 		} else {
 			scrollAndSetActive(sectionId);
 		}
@@ -67,98 +68,126 @@ const Navbar = () => {
 	}, []);
 
 	return (
-		<nav className='flex justify-between items-center w-full fixed top-10 left-0 bg-transparent px-[98px] py-4 z-50'>
-			<div className='flex space-x-[32px] uppercase text-lg font-light'>
-				<p
-					className={`cursor-pointer flex items-center ${
-						activeSection === "about" ? "text-prime" : "text-textPrimary"
-					}`}
-					onClick={() => {
-						scrollToSection("about");
-					}}>
-					{activeSection === "about" && (
-						<span className='w-2 h-2 bg-prime rounded-full mr-2'></span>
-					)}
-					o nas
-				</p>
-				<p
-					className={`cursor-pointer flex items-center ${
-						activeSection === "pricing" ? "text-prime" : "text-textPrimary"
-					}`}
-					onClick={() => scrollToSection("pricing")}>
-					{activeSection === "pricing" && (
-						<span className='w-2 h-2 bg-prime rounded-full mr-2'></span>
-					)}
-					cennik
-				</p>
-				<p
-					className={`cursor-pointer flex items-center ${
-						activeSection === "barbers" ? "text-prime" : "text-textPrimary"
-					}`}
-					onClick={() => scrollToSection("barbers")}>
-					{activeSection === "barbers" && (
-						<span className='w-2 h-2 bg-prime rounded-full mr-2'></span>
-					)}
-					barberzy
-				</p>
-				<p
-					className={`cursor-pointer flex items-center ${
-						activeSection === "works" ? "text-prime" : "text-textPrimary"
-					}`}
-					onClick={() => scrollToSection("works")}>
-					{activeSection === "works" && (
-						<span className='w-2 h-2 bg-prime rounded-full mr-2'></span>
-					)}
-					nasze prace
-				</p>
-			</div>
-			<div className='flex justify-center absolute left-1/2 transform -translate-x-1/2'>
-				<Link to='/'>
-					<img src={Logo} alt='Vite Icon' className='logo cursor-pointer' />
-				</Link>
-			</div>
-			<div className='flex space-x-[32px] uppercase text-lg font-light'>
-				<Link to='/blog'>
-					{location.pathname === "/blog" ||
-					location.pathname === "/blog/boy-haircut" ? (
-						<p
-							className='cursor-pointer flex items-center text-prime
-						'>
+		<nav className='fixed top-10 left-0 w-full z-50 px-4 md:px-[98px]'>
+			<div className='flex justify-between items-center'>
+				{/* Logo */}
+				<div className='md:absolute md:left-1/2 md:transform md:-translate-x-1/2'>
+					<Link to='/'>
+						<img
+							src={Logo}
+							alt='Logo'
+							className='logo cursor-pointer h-[60px] md:h-[80px] md:mt-[-20px]'
+						/>
+					</Link>
+				</div>
+
+				{/* Desktop Links */}
+				<div className='hidden md:flex space-x-[32px] uppercase text-lg font-light'>
+					<p
+						className={`cursor-pointer flex items-center ${
+							activeSection === "about" ? "text-prime" : "text-textPrimary"
+						}`}
+						onClick={() => scrollToSection("about")}>
+						{activeSection === "about" && (
 							<span className='w-2 h-2 bg-prime rounded-full mr-2'></span>
+						)}
+						o nas
+					</p>
+					<p
+						className={`cursor-pointer flex items-center ${
+							activeSection === "pricing" ? "text-prime" : "text-textPrimary"
+						}`}
+						onClick={() => scrollToSection("pricing")}>
+						{activeSection === "pricing" && (
+							<span className='w-2 h-2 bg-prime rounded-full mr-2'></span>
+						)}
+						cennik
+					</p>
+					<p
+						className={`cursor-pointer flex items-center ${
+							activeSection === "barbers" ? "text-prime" : "text-textPrimary"
+						}`}
+						onClick={() => scrollToSection("barbers")}>
+						{activeSection === "barbers" && (
+							<span className='w-2 h-2 bg-prime rounded-full mr-2'></span>
+						)}
+						barberzy
+					</p>
+					<p
+						className={`cursor-pointer flex items-center ${
+							activeSection === "works" ? "text-prime" : "text-textPrimary"
+						}`}
+						onClick={() => scrollToSection("works")}>
+						{activeSection === "works" && (
+							<span className='w-2 h-2 bg-prime rounded-full mr-2'></span>
+						)}
+						nasze prace
+					</p>
+				</div>
+
+				{/* Desktop Right Side */}
+				<div className='hidden md:flex space-x-[32px] uppercase text-lg font-light'>
+					<Link to='/blog'>
+						<p
+							className={`cursor-pointer flex items-center ${
+								location.pathname.includes("/blog")
+									? "text-prime"
+									: "text-textPrimary"
+							}`}>
+							{location.pathname.includes("/blog") && (
+								<span className='w-2 h-2 bg-prime rounded-full mr-2'></span>
+							)}
 							blog
 						</p>
-					) : (
-						<p className='text-textPrimary cursor-pointer'>blog</p>
-					)}
-				</Link>
-				<Link to='/training'>
-					{location.pathname === "/training" ? (
+					</Link>
+					<Link to='/training'>
 						<p
-							className='cursor-pointer flex items-center text-prime
-						'>
-							<span className='w-2 h-2 bg-prime rounded-full mr-2'></span>
+							className={`cursor-pointer flex items-center ${
+								location.pathname === "/training"
+									? "text-prime"
+									: "text-textPrimary"
+							}`}>
+							{location.pathname === "/training" && (
+								<span className='w-2 h-2 bg-prime rounded-full mr-2'></span>
+							)}
 							szkolenia
 						</p>
-					) : (
-						<p className='text-textPrimary cursor-pointer'>szkolenia</p>
-					)}
-				</Link>
-				<p className='text-prime cursor-pointer flex items-center gap-2'>
-					<span>{`>`}</span> zarezerwuj <span>{`<`}</span>
-				</p>
+					</Link>
+					<p className='text-prime cursor-pointer flex items-center gap-2'>
+						<span>{`>`}</span> zarezerwuj <span>{`<`}</span>
+					</p>
+				</div>
+
+				{/* Mobile Menu Icon */}
+				<div className='md:hidden'>
+					<button
+						onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+						className='text-3xl text-prime focus:outline-none'>
+						{isMobileMenuOpen ? "X" : "X"}
+					</button>
+				</div>
 			</div>
-			<style>{`
-				.logo {
-					height: 80px;
-					margin-top: -10px;
-				}
-				@media (min-width: 1800px) {
-					.logo {
-						height: 140px;
-						margin-top: 20px;
-					}
-				}
-			`}</style>
+
+			{/* Mobile Menu */}
+			{isMobileMenuOpen && (
+				<div className='absolute top-full left-0 w-full bg-white bg-opacity-50 backdrop-blur-md px-4 py-6 text-lg font-light uppercase z-50'>
+					<ul className='flex flex-col gap-4'>
+						<li>
+							<Link to='/blog' onClick={() => setIsMobileMenuOpen(false)}>
+								blog
+							</Link>
+						</li>
+						<li>
+							<Link to='/training' onClick={() => setIsMobileMenuOpen(false)}>
+								szkolenia
+							</Link>
+						</li>
+						<li>
+							<p className='text-prime'>{`> zarezerwuj <`}</p>
+						</li>
+					</ul>
+				</div>
+			)}
 		</nav>
 	);
 };
