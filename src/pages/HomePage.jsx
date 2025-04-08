@@ -71,7 +71,7 @@ const HomePage = () => {
 	const settings = {
 		dots: false,
 		infinite: true,
-		slidesToShow: 5,
+		slidesToShow: !isMobile ? 5 : 1,
 		slidesToScroll: 1,
 		autoplay: true,
 		speed: 6000,
@@ -108,10 +108,10 @@ const HomePage = () => {
 
 	// eslint-disable-next-line react/prop-types
 	const Section = ({ children, index }) => {
-		const variants = {
-			hidden: { opacity: 0, rotateX: 90, x: 0 },
-			visible: { opacity: 1, rotateX: 0, x: 0, transition: { duration: 1 } },
-		};
+		// const variants = {
+		// 	hidden: { opacity: 0, rotateX: 90, x: 0 },
+		// 	visible: { opacity: 1, rotateX: 0, x: 0, transition: { duration: 1 } },
+		// };
 
 		const variantsSecond = {
 			hidden: { opacity: 0, rotateY: 90, x: -50 },
@@ -135,245 +135,486 @@ const HomePage = () => {
 		<div className='h-screen overflow-y-scroll snap-y snap-mandatory'>
 			<Navbar />
 			{/* Pierwszy ekran */}
-			<Section index={1}>
-				<div
-					id='about'
-					className='relative flex flex-col min-h-screen px-20 snap-start z-10 overflow-hidden'
-					style={{
-						background: `linear-gradient(90deg, #090909, #091E23), url(${Texture})`,
-						backgroundSize: "cover",
-						backgroundRepeat: "no-repeat",
-						backgroundPosition: "center",
-						backgroundBlendMode: "multiply",
-					}}>
-					<motion.div
-						className='flex flex-col items-start mt-[20%] leading-none max-w-screen-sm z-20'
-						initial='hidden'
-						whileInView='visible'
-						viewport={{ once: true }}
-						variants={fadeInFromLeft}>
-						<h1 className='text-textPrimary uppercase text-titleOne font-bold text-7xl  mb-[-20px]'>
-							mento barber
-						</h1>
-						<h1
-							className='uppercase font-bold text-9xl ml-[-4px]'
-							style={{
-								fontSize: "7.85rem",
-								fontWeight: "bold",
-								textTransform: "uppercase",
-								color: "transparent",
-								WebkitTextStroke: "2px #ff6600", // Obramowanie w WebKit
-								textShadow:
-									"0 0 0px #0B0C0F, 0 0 0px #0B0C0F, 0 0 10px #E67543", // Efekt neonowy
-							}}>
-							bochnia
-						</h1>
-						<p
-							className='mt-4 max-w-xl text-[15px] text-gray-300 ml-[4px]'
-							style={{ lineHeight: 2 }}>
-							MENTO Barber Bochnia Shop to znakomite miejsce, gdzie rzemiosło
-							spotyka się z pasją i profesjonalizmem. Nasza oferta skupia się na
-							perfekcyjnych męskich fryzurach, precyzyjnym strzyżeniu brody oraz
-							zadbanym zarostem.
-						</p>
-					</motion.div>
-
-					<motion.div
-						className='flex justify-between items-center w-full mt-auto py-[2rem] z-20'
-						initial='hidden'
-						whileInView='visible'
-						viewport={{ once: true }}
-						variants={fadeInFromBottom}>
-						<div className='flex space-x-4'>
-							<div className='border-2 border-gray-400 rounded-full py-2 px-5 text-textPrimary'>
-								Nad Babicą 2, Bochnia
-							</div>
-							<div className='border-2 border-gray-400 rounded-full py-2 px-5 text-textPrimary'>
-								+48 123 456 789
-							</div>
-						</div>
-						<div className='flex space-x-4 text-textPrimary items-center'>
-							<img
-								src={FacebookLogo}
-								alt='facebook_logo'
-								style={{ height: "48px" }}
-							/>
-							<img
-								src={InstagramLogo}
-								alt='instagram_logo'
-								style={{ height: "38px" }}
-							/>
-							<img
-								src={TikTokLogo}
-								alt='tiktok_logo'
-								style={{ height: "38px" }}
-							/>
-						</div>
-					</motion.div>
-					<motion.img
-						src={Photo1}
-						alt='Background'
-						className='absolute bottom-0 right-0 w-[40%] h-auto pointer-events-none z-10'
-						style={{ bottom: -60 }}
-						initial='hidden'
-						whileInView='visible'
-						viewport={{ once: true }}
-						variants={fadeInFromRight}
-					/>
-					<img
-						src={Gradient}
-						alt='Gradient'
-						className='absolute top-0 right-0 w-1/1 h-auto pointer-events-none z-0'
-						style={{ top: -700, right: -650 }}
-					/>
+			{!isMobile ? (
+				<Section index={1}>
 					<div
-						className='absolute bottom-0 left-0 w-full h-[30%] pointer-events-none z-10'
+						id='about'
+						className='relative flex flex-col min-h-screen px-20 snap-start z-10 overflow-hidden'
 						style={{
-							background:
-								"linear-gradient(180deg, #0B0C0F00 0%, #0B0C0F80 24%, #0B0C0FBF 35%, #0B0C0F 100%)",
-						}}></div>
-				</div>
-			</Section>
+							background: `linear-gradient(90deg, #090909, #091E23), url(${Texture})`,
+							backgroundSize: "cover",
+							backgroundRepeat: "no-repeat",
+							backgroundPosition: "center",
+							backgroundBlendMode: "multiply",
+						}}>
+						<motion.div
+							className='flex flex-col items-start mt-[20%] leading-none max-w-screen-sm z-20'
+							initial='hidden'
+							whileInView='visible'
+							viewport={{ once: true }}
+							variants={fadeInFromLeft}>
+							<h1 className='text-textPrimary uppercase text-titleOne font-bold text-7xl  mb-[-20px]'>
+								mento barber
+							</h1>
+							<h1
+								className='uppercase font-bold text-9xl ml-[-4px]'
+								style={{
+									fontSize: "7.85rem",
+									fontWeight: "bold",
+									textTransform: "uppercase",
+									color: "transparent",
+									WebkitTextStroke: "2px #ff6600", // Obramowanie w WebKit
+									textShadow:
+										"0 0 0px #0B0C0F, 0 0 0px #0B0C0F, 0 0 10px #E67543", // Efekt neonowy
+								}}>
+								bochnia
+							</h1>
+							<p
+								className='mt-4 max-w-xl text-[15px] text-gray-300 ml-[4px]'
+								style={{ lineHeight: 2 }}>
+								MENTO Barber Bochnia Shop to znakomite miejsce, gdzie rzemiosło
+								spotyka się z pasją i profesjonalizmem. Nasza oferta skupia się
+								na perfekcyjnych męskich fryzurach, precyzyjnym strzyżeniu brody
+								oraz zadbanym zarostem.
+							</p>
+						</motion.div>
+
+						<motion.div
+							className='flex justify-between items-center w-full mt-auto py-[2rem] z-20'
+							initial='hidden'
+							whileInView='visible'
+							viewport={{ once: true }}
+							variants={fadeInFromBottom}>
+							<div className='flex space-x-4'>
+								<div className='border-2 border-gray-400 rounded-full py-2 px-5 text-textPrimary'>
+									Nad Babicą 2, Bochnia
+								</div>
+								<div className='border-2 border-gray-400 rounded-full py-2 px-5 text-textPrimary'>
+									+48 123 456 789
+								</div>
+							</div>
+							<div className='flex space-x-4 text-textPrimary items-center'>
+								<img
+									src={FacebookLogo}
+									alt='facebook_logo'
+									style={{ height: "48px" }}
+								/>
+								<img
+									src={InstagramLogo}
+									alt='instagram_logo'
+									style={{ height: "38px" }}
+								/>
+								<img
+									src={TikTokLogo}
+									alt='tiktok_logo'
+									style={{ height: "38px" }}
+								/>
+							</div>
+						</motion.div>
+						<motion.img
+							src={Photo1}
+							alt='Background'
+							className='absolute bottom-0 right-0 w-[40%] h-auto pointer-events-none z-10'
+							style={{ bottom: -60 }}
+							initial='hidden'
+							whileInView='visible'
+							viewport={{ once: true }}
+							variants={fadeInFromRight}
+						/>
+						<img
+							src={Gradient}
+							alt='Gradient'
+							className='absolute top-0 right-0 w-1/1 h-auto pointer-events-none z-0'
+							style={{ top: -700, right: -650 }}
+						/>
+						<div
+							className='absolute bottom-0 left-0 w-full h-[30%] pointer-events-none z-10'
+							style={{
+								background:
+									"linear-gradient(180deg, #0B0C0F00 0%, #0B0C0F80 24%, #0B0C0FBF 35%, #0B0C0F 100%)",
+							}}></div>
+					</div>
+				</Section>
+			) : (
+				<Section index={1}>
+					<div
+						id='about'
+						className='relative flex flex-col justify-end min-h-screen px-6 pb-5 snap-start z-10 overflow-hidden'
+						style={{
+							background: `linear-gradient(90deg, #090909, #091E23), url(${Texture})`,
+							backgroundSize: "cover",
+							backgroundRepeat: "no-repeat",
+							backgroundPosition: "center",
+							backgroundBlendMode: "multiply",
+						}}>
+						<div className='flex flex-col items-center  mt-[10%] leading-none z-20 '>
+							<div className='flex space-x-4 items-center gap-[32px] mb-[24px]'>
+								<img
+									src={FacebookLogo}
+									alt='facebook_logo'
+									style={{ height: "48px" }}
+								/>
+								<img
+									src={InstagramLogo}
+									alt='instagram_logo'
+									style={{ height: "38px" }}
+								/>
+								<img
+									src={TikTokLogo}
+									alt='tiktok_logo'
+									style={{ height: "38px" }}
+								/>
+							</div>
+							<h1
+								className='text-textPrimary uppercase text-titleOne font-bold text-center'
+								style={{ fontSize: "2.95rem" }}>
+								mento barber
+							</h1>
+							<h1
+								className='uppercase font-bold text-center'
+								style={{
+									fontSize: "5rem",
+									fontWeight: "bold",
+									textTransform: "uppercase",
+									color: "transparent",
+									WebkitTextStroke: "2px #ff6600",
+									textShadow:
+										"0 0 0px #0B0C0F, 0 0 0px #0B0C0F, 0 0 10px #E67543",
+								}}>
+								bochnia
+							</h1>
+							<p
+								className='text-center text-[14px] text-gray-300 mb-[48px]'
+								style={{ lineHeight: 2 }}>
+								MENTO Barber Bochnia Shop to znakomite miejsce, gdzie rzemiosło
+								spotyka się z pasją i profesjonalizmem. Nasza oferta skupia się
+								na perfekcyjnych męskich fryzurach, precyzyjnym strzyżeniu brody
+								oraz zadbanym zarostem.
+							</p>
+							<div className='flex flex-col items-center space-y-[12px] w-full'>
+								<div className='border-2 border-gray-400 rounded-full w-full py-[12px] px-5 text-textPrimary text-center'>
+									Nad Babicą 2, Bochnia
+								</div>
+								<div className='border-2 border-gray-400 rounded-full w-full py-[12px] px-5 text-textPrimary text-center'>
+									+48 123 456 789
+								</div>
+							</div>
+						</div>
+						<motion.img
+							src={Photo1}
+							alt='Background'
+							className='absolute inset-0 mx-auto top-20 w-[150%] h-auto object-contain pointer-events-none z-10'
+							initial='hidden'
+							whileInView='visible'
+							viewport={{ once: true }}
+							variants={fadeInFromRight}
+						/>
+						<img
+							src={Gradient}
+							alt='Gradient'
+							className='absolute top-0 z-0 w-[800px] max-w-none'
+							style={{ right: "-200px", top: "-200px" }}
+						/>
+						<div
+							className='absolute bottom-0 left-0 w-full h-[60%] pointer-events-none z-10'
+							style={{
+								background:
+									"linear-gradient(180deg, #0B0C0F00 0%, #0B0C0F80 24%, #0B0C0FBF 35%, #0B0C0F 100%)",
+							}}></div>
+					</div>
+				</Section>
+			)}
 			{/* Drugi ekran - cennik */}
-			<Section index={2}>
-				<div
-					id='pricing'
-					className='relative h-screen flex  items-center justify-end pt-[50px] text-prime snap-start overflow-hidden'
-					style={{
-						background: `linear-gradient(90deg, #091E23, #090909), url(${Texture})`,
-						backgroundSize: "cover",
-						backgroundRepeat: "no-repeat",
-						backgroundPosition: "center",
-						backgroundBlendMode: "multiply",
-					}}>
-					<motion.div
-						className='grid grid-cols-2 gap-6 pr-[98px]'
-						initial='hidden'
-						whileInView='visible'
-						viewport={{ once: true }}
-						variants={fadeInFromLeft}>
-						{[
-							{ name: "STRZYŻENIE MĘSKIE", price: "80 PLN", time: "30 min" },
-							{ name: "WŁOSY + BRODA", price: "130 PLN", time: "60 min" },
-							{ name: "STRZYŻENIE BRODY", price: "60 PLN", time: "30 min" },
-							{ name: "BRODA + ODSIWIANIE", price: "130 PLN", time: "45 min" },
-							{ name: "COMBO + ODSIWIANIE", price: "190 PLN", time: "75 min" },
-							{
-								name: "COMBO (WŁOSY + BRODA)",
-								price: "130 PLN",
-								time: "60 min",
-							},
-							{ name: "GŁOWA ZERO + BRODA", price: "100 PLN", time: "30 min" },
-							{ name: "MYCIE WŁOSÓW", price: "10 PLN", time: "15 min" },
-						].map((item, index) => (
-							<div key={index} style={{ boxShadow: "0px 8px 10px #00000066" }}>
+			{!isMobile ? (
+				<Section index={2}>
+					<div
+						id='pricing'
+						className='relative h-screen flex  items-center justify-end pt-[50px] text-prime snap-start overflow-hidden'
+						style={{
+							background: `linear-gradient(90deg, #091E23, #090909), url(${Texture})`,
+							backgroundSize: "cover",
+							backgroundRepeat: "no-repeat",
+							backgroundPosition: "center",
+							backgroundBlendMode: "multiply",
+						}}>
+						<motion.div
+							className='grid grid-cols-2 gap-6 pr-[98px]'
+							initial='hidden'
+							whileInView='visible'
+							viewport={{ once: true }}
+							variants={fadeInFromLeft}>
+							{[
+								{ name: "STRZYŻENIE MĘSKIE", price: "80 PLN", time: "30 min" },
+								{ name: "WŁOSY + BRODA", price: "130 PLN", time: "60 min" },
+								{ name: "STRZYŻENIE BRODY", price: "60 PLN", time: "30 min" },
+								{
+									name: "BRODA + ODSIWIANIE",
+									price: "130 PLN",
+									time: "45 min",
+								},
+								{
+									name: "COMBO + ODSIWIANIE",
+									price: "190 PLN",
+									time: "75 min",
+								},
+								{
+									name: "COMBO (WŁOSY + BRODA)",
+									price: "130 PLN",
+									time: "60 min",
+								},
+								{
+									name: "GŁOWA ZERO + BRODA",
+									price: "100 PLN",
+									time: "30 min",
+								},
+								{ name: "MYCIE WŁOSÓW", price: "10 PLN", time: "15 min" },
+							].map((item, index) => (
 								<div
-									className='p-4 text-start w-96 text-prime  rounded-md transition-all duration-300 hover:border-prime hover:shadow-[0_0_7px_rgba(255,120,0,1),inset_0_0_5px_rgba(255,120,0,1)] cursor-pointer'
+									key={index}
+									style={{ boxShadow: "0px 8px 10px #00000066" }}>
+									<div
+										className='p-4 text-start w-96 text-prime  rounded-md transition-all duration-300 hover:border-prime hover:shadow-[0_0_7px_rgba(255,120,0,1),inset_0_0_5px_rgba(255,120,0,1)] cursor-pointer'
+										style={{
+											backgroundColor: "#171D1F",
+											opacity: 1,
+										}}>
+										<h3 className='font-bold'>{item.name}</h3>
+										<p className='text-gray-300'>
+											{item.price} | {item.time}
+										</p>
+									</div>
+								</div>
+							))}
+						</motion.div>
+						<div className='absolute bottom-0 right-0 pr-[98px] pb-[60px] text-[10px] text-center'>
+							<p className='text-textPrimary'>
+								Podane ceny tyczą się barberów zaawansowanych, ceny szczegółowe
+								rozpisane są na booksy.
+							</p>
+						</div>
+
+						<img
+							src={Gradient}
+							alt='Gradient'
+							className='absolute top-0 left-0 w-1/1 h-auto pointer-events-none z-0'
+							style={{ top: -300, left: -600 }}
+						/>
+						<img
+							src={Photo2}
+							alt='Background'
+							className='absolute bottom-0 left-0 top-10 w-1/3 h-auto pointer-events-none'
+						/>
+					</div>
+				</Section>
+			) : (
+				<Section index={2}>
+					<div
+						id='pricing'
+						className='relative h-screen flex flex-col items-center justify-end pt-[20px] text-prime snap-start overflow-hidden'
+						style={{
+							background: `linear-gradient(90deg, #091E23, #090909), url(${Texture})`,
+							backgroundSize: "cover",
+							backgroundRepeat: "no-repeat",
+							backgroundPosition: "center",
+							backgroundBlendMode: "multiply",
+						}}>
+						<motion.div
+							className='grid grid-cols-1 gap-2 w-full px-4 mb-[20px] z-10'
+							style={{ height: "85%" }}
+							initial='hidden'
+							whileInView='visible'
+							viewport={{ once: true }}
+							variants={fadeInFromLeft}>
+							{[
+								{ name: "STRZYŻENIE MĘSKIE", price: "80 PLN", time: "30 min" },
+								{ name: "WŁOSY + BRODA", price: "130 PLN", time: "60 min" },
+								{ name: "STRZYŻENIE BRODY", price: "60 PLN", time: "30 min" },
+								{
+									name: "BRODA + ODSIWIANIE",
+									price: "130 PLN",
+									time: "45 min",
+								},
+								{
+									name: "COMBO + ODSIWIANIE",
+									price: "190 PLN",
+									time: "75 min",
+								},
+								{
+									name: "COMBO (WŁOSY + BRODA)",
+									price: "130 PLN",
+									time: "60 min",
+								},
+								{
+									name: "GŁOWA ZERO + BRODA",
+									price: "100 PLN",
+									time: "30 min",
+								},
+								{ name: "MYCIE WŁOSÓW", price: "10 PLN", time: "15 min" },
+							].map((item, index) => (
+								<div
+									key={index}
+									className='p-2 flex flex-col justify-center items-center text-center text-prime rounded-md transition-all duration-300 hover:border-prime hover:shadow-[0_0_7px_rgba(255,120,0,1),inset_0_0_5px_rgba(255,120,0,1)] cursor-pointer'
 									style={{
 										backgroundColor: "#171D1F",
+										boxShadow: "0px 8px 10px #00000066",
 										opacity: 1,
 									}}>
-									<h3 className='font-bold'>{item.name}</h3>
-									<p className='text-gray-300'>
+									<h3 className='font-bold' style={{ fontSize: "14px" }}>
+										{item.name}
+									</h3>
+									<p className='text-gray-300' style={{ fontSize: "14px" }}>
 										{item.price} | {item.time}
 									</p>
 								</div>
-							</div>
-						))}
-					</motion.div>
-					<div className='absolute bottom-0 right-0 pr-[98px] pb-[60px] text-[10px] text-center'>
-						<p className='text-textPrimary'>
-							Podane ceny tyczą się barberów zaawansowanych, ceny szczegółowe
-							rozpisane są na booksy.
-						</p>
+							))}
+						</motion.div>
+						<img
+							src={Gradient}
+							alt='Gradient'
+							className='absolute top-0 z-0 w-[800px] max-w-none'
+							style={{ right: "-125px", top: "-100px" }}
+						/>
 					</div>
-
-					<img
-						src={Gradient}
-						alt='Gradient'
-						className='absolute top-0 left-0 w-1/1 h-auto pointer-events-none z-0'
-						style={{ top: -300, left: -600 }}
-					/>
-					<img
-						src={Photo2}
-						alt='Background'
-						className='absolute bottom-0 left-0 top-10 w-1/3 h-auto pointer-events-none'
-					/>
-				</div>
-			</Section>
+				</Section>
+			)}
 			{/* Trzeci ekran - barberzy */}
-			<Section index={3}>
-				<div
-					id='barbers'
-					className='relative h-screen flex items-center justify-start p-10 text-white snap-start overflow-hidden'
-					style={{
-						background: `linear-gradient(90deg, #090909, #091E23), url(${Texture})`,
-						backgroundSize: "cover",
-						backgroundRepeat: "no-repeat",
-						backgroundPosition: "center",
-						backgroundBlendMode: "multiply",
-					}}>
-					<motion.div
-						className='text-start p-10'
-						initial='hidden'
-						whileInView='visible'
-						viewport={{ once: true }}
-						variants={fadeInFromLeft}>
-						<h1
-							className='text-9xl font-bold text-orange-500'
+			{!isMobile ? (
+				<Section index={3}>
+					<div
+						id='barbers'
+						className='relative h-screen flex items-center justify-start p-10 text-white snap-start overflow-hidden'
+						style={{
+							background: `linear-gradient(90deg, #090909, #091E23), url(${Texture})`,
+							backgroundSize: "cover",
+							backgroundRepeat: "no-repeat",
+							backgroundPosition: "center",
+							backgroundBlendMode: "multiply",
+						}}>
+						<motion.div
+							className='text-start p-10'
+							initial='hidden'
+							whileInView='visible'
+							viewport={{ once: true }}
+							variants={fadeInFromLeft}>
+							<h1
+								className='text-9xl font-bold text-orange-500'
+								style={{
+									fontSize: "7.85rem",
+									fontWeight: "bold",
+									textTransform: "uppercase",
+									color: "transparent",
+									WebkitTextStroke: "2px #ff6600",
+									textShadow:
+										"0 0 0px #0B0C0F, 0 0 0px #0B0C0F, 0 0 10px #E67543",
+								}}>
+								JIMMY
+							</h1>
+							<p className='mt-4 max-w-[430px] text-[15px] font-light'>
+								Profesjonalizm to dla mnie podstawa – zawsze staram się zapewnić
+								najwyższą jakość usług, dzieląc się swoją wiedzą o pielęgnacji i
+								stylizacji. Choć kocham klasyczne cięcia, z radością
+								eksperymentuję z nowymi trendami. Moje podejście do pracy to nie
+								tylko precyzyjne cięcie, ale także dobra zabawa i pozytywna
+								atmosfera, którą stwarzam wokół siebie.
+							</p>
+						</motion.div>
+						<motion.div
+							className='absolute w-full left-0 right-0 z-1'
+							initial='hidden'
+							whileInView='visible'
+							viewport={{ once: true }}
+							variants={slideInFromRight}>
+							<h1
+								className='font-bold uppercase text-center'
+								style={{
+									fontSize: "30vw",
+									fontWeight: "bold",
+									color: "transparent",
+									WebkitTextStroke: "4px #ff6600",
+									width: "100%",
+									whiteSpace: "nowrap",
+								}}>
+								JIMMY
+							</h1>
+						</motion.div>
+						<img
+							src={Gradient}
+							alt='Gradient'
+							className='absolute top-0 right-0 w-1/2 h-auto pointer-events-none z-0'
+							style={{ top: -350, right: -350 }}
+						/>
+						<img
+							src={PhotoJimmy}
+							alt='Background'
+							className='absolute bottom-0 right-0 w-1/2 h-auto pointer-events-none'
+							style={{ bottom: -240, right: -95, zIndex: 1 }}
+						/>
+					</div>
+				</Section>
+			) : (
+				<Section index={1}>
+					<div
+						id='about'
+						className='relative flex flex-col justify-end min-h-screen px-6 pb-5 snap-start z-10 overflow-hidden'
+						style={{
+							background: `linear-gradient(90deg, #090909, #091E23), url(${Texture})`,
+							backgroundSize: "cover",
+							backgroundRepeat: "no-repeat",
+							backgroundPosition: "center",
+							backgroundBlendMode: "multiply",
+						}}>
+						<div className='flex flex-col items-center  mt-[10%] leading-none z-20 '>
+							<h1
+								className='font-bold uppercase text-center'
+								style={{
+									fontSize: "25vw",
+									fontWeight: "bold",
+									color: "transparent",
+									WebkitTextStroke: "2px #ff6600",
+									width: "100%",
+									whiteSpace: "nowrap",
+								}}>
+								JIMMY
+							</h1>
+							<p className='mt-4 max-w-[430px] text-[18px] font-light text-white text-center'>
+								Profesjonalizm to dla mnie podstawa – zawsze staram się zapewnić
+								najwyższą jakość usług, dzieląc się swoją wiedzą o pielęgnacji i
+								stylizacji. Choć kocham klasyczne cięcia, z radością
+								eksperymentuję z nowymi trendami. Moje podejście do pracy to nie
+								tylko precyzyjne cięcie, ale także dobra zabawa i pozytywna
+								atmosfera, którą stwarzam wokół siebie.
+							</p>
+							<div className='flex flex-col items-center space-y-[12px] w-full'>
+								<button className='button p-[16px] border-2 w-full border-prime rounded-[16px] text-prime mb-[24px] mt-[24px]'>
+									Umów wizytę
+								</button>
+							</div>
+						</div>
+						<motion.img
+							src={PhotoJimmy}
+							alt='Background'
+							className='absolute top-0 w-[700px] max-w-none z-10' // Added maxWidth constraint
+							style={{ right: "-125px", top: "-200px" }}
+							initial='hidden'
+							whileInView='visible'
+							viewport={{ once: true }}
+							variants={fadeInFromRight}
+						/>
+						<img
+							src={Gradient}
+							alt='Gradient'
+							className='absolute top-0 z-0 w-[800px] max-w-none'
+							style={{ right: "-200px", top: "-200px" }}
+						/>
+						<div
+							className='absolute bottom-0 left-0 w-full h-[60%] pointer-events-none z-10'
 							style={{
-								fontSize: "7.85rem",
-								fontWeight: "bold",
-								textTransform: "uppercase",
-								color: "transparent",
-								WebkitTextStroke: "2px #ff6600",
-								textShadow:
-									"0 0 0px #0B0C0F, 0 0 0px #0B0C0F, 0 0 10px #E67543",
-							}}>
-							JIMMY
-						</h1>
-						<p className='mt-4 max-w-[430px] text-[15px] font-light'>
-							Profesjonalizm to dla mnie podstawa – zawsze staram się zapewnić
-							najwyższą jakość usług, dzieląc się swoją wiedzą o pielęgnacji i
-							stylizacji. Choć kocham klasyczne cięcia, z radością
-							eksperymentuję z nowymi trendami. Moje podejście do pracy to nie
-							tylko precyzyjne cięcie, ale także dobra zabawa i pozytywna
-							atmosfera, którą stwarzam wokół siebie.
-						</p>
-					</motion.div>
-					<motion.div
-						className='absolute w-full left-0 right-0 z-1'
-						initial='hidden'
-						whileInView='visible'
-						viewport={{ once: true }}
-						variants={slideInFromRight}>
-						<h1
-							className='font-bold uppercase text-center'
-							style={{
-								fontSize: "30vw",
-								fontWeight: "bold",
-								color: "transparent",
-								WebkitTextStroke: "4px #ff6600",
-								width: "100%",
-								whiteSpace: "nowrap",
-							}}>
-							JIMMY
-						</h1>
-					</motion.div>
-					<img
-						src={Gradient}
-						alt='Gradient'
-						className='absolute top-0 right-0 w-1/2 h-auto pointer-events-none z-0'
-						style={{ top: -350, right: -350 }}
-					/>
-					<img
-						src={PhotoJimmy}
-						alt='Background'
-						className='absolute bottom-0 right-0 w-1/2 h-auto pointer-events-none'
-						style={{ bottom: -240, right: -95, zIndex: 1 }}
-					/>
-				</div>
-			</Section>
+								background:
+									"linear-gradient(180deg, #0B0C0F00 0%, #0B0C0F80 24%, #0B0C0FBF 35%, #0B0C0F 100%)",
+							}}></div>
+					</div>
+				</Section>
+			)}
 			{/* Barbers */}
 			<Barber2 />
 			<Barber3 />

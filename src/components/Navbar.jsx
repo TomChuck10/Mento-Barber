@@ -68,7 +68,7 @@ const Navbar = () => {
 	}, []);
 
 	return (
-		<nav className='fixed top-10 left-0 w-full z-50 px-4 md:px-[98px]'>
+		<nav className='fixed top-5 md:top-10 left-0 w-full z-50 px-4 md:px-[98px]'>
 			<div className='flex justify-between items-center'>
 				{/* Logo */}
 				<div className='md:absolute md:left-1/2 md:transform md:-translate-x-1/2'>
