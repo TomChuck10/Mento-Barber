@@ -71,7 +71,7 @@ const Navbar = () => {
 		<nav className='fixed top-5 md:top-10 left-0 w-full z-50 px-4 md:px-[98px]'>
 			<div className='flex justify-between items-center'>
 				{/* Logo */}
-				<div className='md:absolute md:left-1/2 md:transform md:-translate-x-1/2'>
+				<div className='md:absolute md:left-1/2 md:transform md:-translate-x-1/2 z-20'>
 					<Link to='/'>
 						<img
 							src={Logo}
@@ -159,7 +159,7 @@ const Navbar = () => {
 				</div>
 
 				{/* Mobile Menu Icon */}
-				<div className='md:hidden'>
+				<div className='md:hidden z-20'>
 					<button
 						onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
 						className='text-3xl text-prime focus:outline-none'>
@@ -170,8 +170,36 @@ const Navbar = () => {
 
 			{/* Mobile Menu */}
 			{isMobileMenuOpen && (
-				<div className='absolute top-full left-0 w-full bg-white bg-opacity-50 backdrop-blur-md px-4 py-6 text-lg font-light uppercase z-50'>
-					<ul className='flex flex-col gap-4'>
+				<div className='fixed inset-0 bg-black bg-opacity-75 backdrop-blur-md flex flex-col justify-center items-center text-lg font-light uppercase z-10'>
+					<ul className='flex flex-col gap-8 text-center text-white text-[18px]'>
+						<li
+							onClick={() => {
+								scrollToSection("about");
+								setIsMobileMenuOpen(false);
+							}}>
+							o nas
+						</li>
+						<li
+							onClick={() => {
+								scrollToSection("pricing");
+								setIsMobileMenuOpen(false);
+							}}>
+							cennik
+						</li>
+						<li
+							onClick={() => {
+								scrollToSection("barbers");
+								setIsMobileMenuOpen(false);
+							}}>
+							barberzy
+						</li>
+						<li
+							onClick={() => {
+								scrollToSection("works");
+								setIsMobileMenuOpen(false);
+							}}>
+							nasze prace
+						</li>
 						<li>
 							<Link to='/blog' onClick={() => setIsMobileMenuOpen(false)}>
 								blog
