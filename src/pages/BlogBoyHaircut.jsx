@@ -101,7 +101,7 @@ const BlogBoyHaircut = () => {
 			<div className='relative h-screen overflow-auto'>
 				<div className='flex items-center justify-center mt-[100px] mb-[5%]'>
 					<div
-						className='w-full bg-[#171D1F] flex flex-col p-[32px] m-[16px] rounded-[10px]'
+						className='w-full bg-[#171D1F] flex flex-col p-[32px] m-[16px] rounded-[10px] z-10'
 						style={{ boxShadow: "0px 8px 10px #00000099" }}>
 						<div className='h-[100px] bg-prime rounded-[6px]'></div>
 						<p className='text-[12px] text-white mt-[32px] font-light'>
@@ -147,6 +147,12 @@ const BlogBoyHaircut = () => {
 							codziennego noszenia.
 						</p>
 					</div>
+					<img
+						src={Gradient}
+						alt='Gradient'
+						className='absolute top-0 z-0 w-[800px] max-w-none'
+						style={{ right: "-200px", top: "-200px" }}
+					/>
 				</div>
 			</div>
 

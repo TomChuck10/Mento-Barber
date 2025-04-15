@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { useLocation, useNavigate, Link } from "react-router-dom";
+import { AiOutlineClose } from "react-icons/ai"; // Import ikony
 import Logo from "../assets/mento_logo.png";
-// import { FiMenu, FiX } from "react-icons/fi";
+import BurgerMenu from "../assets/burgerMenu.svg";
 
 const Navbar = () => {
 	const [activeSection, setActiveSection] = useState("about");
@@ -154,7 +155,9 @@ const Navbar = () => {
 						</p>
 					</Link>
 					<p className='text-prime cursor-pointer flex items-center gap-2'>
-						<span>{`>`}</span> zarezerwuj <span>{`<`}</span>
+						<span>{`>`}</span>
+						<span>zarezerwuj</span>
+						<span>{`<`}</span>
 					</p>
 				</div>
 
@@ -163,7 +166,11 @@ const Navbar = () => {
 					<button
 						onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
 						className='text-3xl text-prime focus:outline-none'>
-						{isMobileMenuOpen ? "X" : "X"}
+						{isMobileMenuOpen ? (
+							<AiOutlineClose style={{ color: "#FFFFFF" }} />
+						) : (
+							<img src={BurgerMenu} style={{ height: "20px" }} />
+						)}
 					</button>
 				</div>
 			</div>
@@ -211,7 +218,11 @@ const Navbar = () => {
 							</Link>
 						</li>
 						<li>
-							<p className='text-prime'>{`> zarezerwuj <`}</p>
+							<p className='text-prime font-bold flex justify-center items-center gap-2'>
+								<span>{`>`}</span>
+								<span>zarezerwuj</span>
+								<span>{`<`}</span>
+							</p>
 						</li>
 					</ul>
 				</div>
