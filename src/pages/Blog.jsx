@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Gradient from "../assets/gradient.svg";
 import { useIsMobile } from "../Hooks/useIsMobile";
+import BoyHaircut from "../assets/fryzury_chlopcy.png";
 
 // Texture
 import Texture from "../assets/texture.png";
@@ -26,6 +27,7 @@ const Blog = () => {
 					backgroundRepeat: "no-repeat",
 					backgroundPosition: "center",
 					backgroundBlendMode: "multiply",
+					backgroundImage: `url(${BoyHaircut})`,
 				}}>
 				<div className='z-20 flex flex-row justify-between w-full items-end'>
 					<div className='flex flex-col items-start mt-60 leading-none max-w-screen-sm z-20'>

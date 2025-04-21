@@ -5,70 +5,53 @@ import Logo from "../assets/mento_logo.png";
 import BurgerMenu from "../assets/burgerMenu.svg";
 
 const Navbar = () => {
-	const [activeSection, setActiveSection] = useState("about");
+	const [activeSection, setActiveSection] = useState(null);
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
 	const location = useLocation();
 	const navigate = useNavigate();
 
-	const scrollToSection = sectionId => {
+	// eslint-disable-next-line react-hooks/exhaustive-deps
+	const menus = [
+		{ name: "o nas", id: "about" },
+		{ name: "cennik", id: "pricing" },
+		{ name: "barberzy", ids: ["barbers", "barbers-end"] },
+		{ name: "nasze prace", id: "works" },
+	];
+
+	console.log(location.pathname);
+
+	useEffect(() => {
 		if (location.pathname !== "/") {
-			navigate("/", { state: { scrollTo: sectionId } });
-		} else {
-			scrollAndSetActive(sectionId);
+			setActiveSection(null);
+			return; // Exit early if not on the homepage
 		}
-	};
 
-	const scrollAndSetActive = sectionId => {
-		setTimeout(() => {
-			const element = document.getElementById(sectionId);
-			if (element) {
-				element.scrollIntoView({ behavior: "smooth" });
-				setActiveSection(sectionId);
-			}
-		}, 100);
-	};
+		const options = {
+			root: null, // Use the viewport as the root
+			rootMargin: "0px",
+			threshold: 0.4, // Trigger when 40% of the section is visible
+		};
 
-	useEffect(() => {
-		if (location.state?.scrollTo) {
-			scrollAndSetActive(location.state.scrollTo);
-		}
-	}, [location]);
-
-	useEffect(() => {
-		if (
-			location.pathname === "/training" ||
-			location.pathname === "/blog" ||
-			location.pathname === "/blog/boy-haircut"
-		) {
-			setActiveSection("");
-		}
-	}, [location.pathname]);
-
-	useEffect(() => {
-		const handleScroll = () => {
-			const sections = ["about", "pricing", "barbers", "works"];
-			const scrollPosition = window.scrollY + window.innerHeight / 2;
-
-			for (let section of sections) {
-				const element = document.getElementById(section);
-				if (
-					element &&
-					element.offsetTop <= scrollPosition &&
-					element.offsetTop + element.offsetHeight > scrollPosition
-				) {
-					setActiveSection(section);
-					break;
+		const observer = new IntersectionObserver(entries => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					setActiveSection(entry.target.id);
 				}
-			}
-		};
+			});
+		}, options);
 
-		window.addEventListener("scroll", handleScroll);
-		return () => {
-			window.removeEventListener("scroll", handleScroll);
-		};
-	}, []);
+		menus.forEach(menu => {
+			const ids = menu.ids || [menu.id]; // Handle single or multiple ids
+			ids.forEach(id => {
+				const element = document.getElementById(id);
+				if (element) observer.observe(element);
+			});
+		});
 
-	console.log("new branch");
+		// Cleanup observer on unmount
+		return () => observer.disconnect();
+	}, [menus, location.pathname]);
 
 	return (
 		<nav className='fixed top-5 md:top-10 left-0 w-full z-50 px-4 md:px-[98px]'>
@@ -86,46 +69,22 @@ const Navbar = () => {
 
 				{/* Desktop Links */}
 				<div className='hidden md:flex space-x-[32px] uppercase text-lg font-light'>
-					<p
-						className={`cursor-pointer flex items-center ${
-							activeSection === "about" ? "text-prime" : "text-textPrimary"
-						}`}
-						onClick={() => scrollToSection("about")}>
-						{activeSection === "about" && (
-							<span className='w-2 h-2 bg-prime rounded-full mr-2'></span>
-						)}
-						o nas
-					</p>
-					<p
-						className={`cursor-pointer flex items-center ${
-							activeSection === "pricing" ? "text-prime" : "text-textPrimary"
-						}`}
-						onClick={() => scrollToSection("pricing")}>
-						{activeSection === "pricing" && (
-							<span className='w-2 h-2 bg-prime rounded-full mr-2'></span>
-						)}
-						cennik
-					</p>
-					<p
-						className={`cursor-pointer flex items-center ${
-							activeSection === "barbers" ? "text-prime" : "text-textPrimary"
-						}`}
-						onClick={() => scrollToSection("barbers")}>
-						{activeSection === "barbers" && (
-							<span className='w-2 h-2 bg-prime rounded-full mr-2'></span>
-						)}
-						barberzy
-					</p>
-					<p
-						className={`cursor-pointer flex items-center ${
-							activeSection === "works" ? "text-prime" : "text-textPrimary"
-						}`}
-						onClick={() => scrollToSection("works")}>
-						{activeSection === "works" && (
-							<span className='w-2 h-2 bg-prime rounded-full mr-2'></span>
-						)}
-						nasze prace
-					</p>
+					{menus.map((menu, i) => (
+						<a
+							key={i}
+							href={`#${menu.ids ? menu.ids[0] : menu.id}`} // Use the first id for href if multiple
+							onClick={() => navigate(`/#${menu.ids ? menu.ids[0] : menu.id}`)}
+							className={`cursor-pointer flex items-center ${
+								(menu.ids || [menu.id]).some(id => activeSection === id)
+									? "text-prime"
+									: "text-textPrimary"
+							}`}>
+							{(menu.ids || [menu.id]).some(id => activeSection === id) && (
+								<span className='w-2 h-2 bg-prime rounded-full mr-2'></span>
+							)}
+							{menu.name}
+						</a>
+					))}
 				</div>
 
 				{/* Desktop Right Side */}
@@ -183,31 +142,43 @@ const Navbar = () => {
 					<ul className='flex flex-col gap-8 text-center text-white text-[18px]'>
 						<li
 							onClick={() => {
-								scrollToSection("about");
+								// scrollToSection("about");
 								setIsMobileMenuOpen(false);
+								navigate("/#about");
 							}}>
-							o nas
+							<a href='#about' className='cursor-pointer'>
+								o nas
+							</a>
 						</li>
 						<li
 							onClick={() => {
-								scrollToSection("pricing");
+								// scrollToSection("pricing");
 								setIsMobileMenuOpen(false);
+								navigate("/#pricing");
 							}}>
-							cennik
+							<a href='#pricing' className='cursor-pointer'>
+								cennik
+							</a>
 						</li>
 						<li
 							onClick={() => {
-								scrollToSection("barbers");
+								// scrollToSection("barbers");
 								setIsMobileMenuOpen(false);
+								navigate("/#barbers");
 							}}>
-							barberzy
+							<a href='#barbers' className='cursor-pointer'>
+								barberzy
+							</a>
 						</li>
 						<li
 							onClick={() => {
-								scrollToSection("works");
+								// scrollToSection("works");
 								setIsMobileMenuOpen(false);
+								navigate("/#works");
 							}}>
-							nasze prace
+							<a href='#works' className='cursor-pointer'>
+								nasze prace
+							</a>
 						</li>
 						<li>
 							<Link to='/blog' onClick={() => setIsMobileMenuOpen(false)}>
