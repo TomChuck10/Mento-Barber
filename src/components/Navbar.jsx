@@ -5,241 +5,255 @@ import Logo from "../assets/mento_logo.png";
 import BurgerMenu from "../assets/burgerMenu.svg";
 
 const Navbar = () => {
-  const [activeSection, setActiveSection] = useState("about");
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const location = useLocation();
-  const navigate = useNavigate();
+	const [activeSection, setActiveSection] = useState("about");
+	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+	const location = useLocation();
+	const navigate = useNavigate();
 
-  const scrollToSection = (sectionId) => {
-    if (location.pathname !== "/") {
-      navigate("/", { state: { scrollTo: sectionId } });
-    } else {
-      scrollAndSetActive(sectionId);
-    }
-  };
+	useEffect(() => {
+		const options = {
+			root: null, // Use the viewport as the root
+			rootMargin: "0px",
+			threshold: 0.4, // Trigger when 40% of the section is visible
+		};
 
-  const scrollAndSetActive = (sectionId) => {
-    setTimeout(() => {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-        setActiveSection(sectionId);
-      }
-    }, 100);
-  };
+		const observer = new IntersectionObserver(entries => {
+			console.log("entries", entries);
+			console.log("activeSection", activeSection);
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					setActiveSection(entry.target.id);
+				}
+			});
+			console.log("activeSection", activeSection);
+		}, options);
 
-  useEffect(() => {
-    if (location.state?.scrollTo) {
-      scrollAndSetActive(location.state.scrollTo);
-    }
-  }, [location]);
+		const menus = ["about", "pricing", "barbers", "works"];
 
-  useEffect(() => {
-    if (
-      location.pathname === "/training" ||
-      location.pathname === "/blog" ||
-      location.pathname === "/blog/boy-haircut"
-    ) {
-      setActiveSection("");
-    }
-  }, [location.pathname]);
+		menus.forEach(menu => {
+			const element = document.getElementById(menu);
+			if (element) observer.observe(element);
+		});
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = ["about", "pricing", "barbers", "works"];
-      const scrollPosition = window.scrollY + window.innerHeight / 2;
+		// Cleanup observer on unmount
+		return () => observer.disconnect();
+	}, [activeSection]); // Removed dependency on `menus` to avoid unnecessary re-renders
 
-      for (let section of sections) {
-        const element = document.getElementById(section);
-        if (
-          element &&
-          element.offsetTop <= scrollPosition &&
-          element.offsetTop + element.offsetHeight > scrollPosition
-        ) {
-          setActiveSection(section);
-          break;
-        }
-      }
-    };
+	console.log("activeSection", activeSection);
 
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+	const scrollToSection = sectionId => {
+		if (location.pathname !== "/") {
+			navigate("/", { state: { scrollTo: sectionId } });
+		} else {
+			scrollAndSetActive(sectionId);
+		}
+	};
 
-  return (
-    <nav className="fixed top-5 md:top-10 left-0 w-full z-50 px-4 md:px-[98px]">
-      <div className="flex justify-between items-center">
-        {/* Logo */}
-        <div className="md:absolute md:left-1/2 md:transform md:-translate-x-1/2 z-20">
-          <Link to="/">
-            <img
-              src={Logo}
-              alt="Logo"
-              className="logo cursor-pointer h-[60px] md:h-[80px] md:mt-[-20px]"
-            />
-          </Link>
-        </div>
+	const scrollAndSetActive = sectionId => {
+		setTimeout(() => {
+			const element = document.getElementById(sectionId);
+			if (element) {
+				element.scrollIntoView({ behavior: "smooth" });
+				setActiveSection(sectionId);
+			}
+		}, 100);
+	};
 
-        {/* Desktop Links */}
-        <div className="hidden md:flex space-x-[32px] uppercase text-lg font-light">
-          <p
-            className={`cursor-pointer flex items-center ${
-              activeSection === "about" ? "text-prime" : "text-textPrimary"
-            }`}
-            onClick={() => scrollToSection("about")}
-          >
-            {activeSection === "about" && (
-              <span className="w-2 h-2 bg-prime rounded-full mr-2"></span>
-            )}
-            o nas
-          </p>
-          <p
-            className={`cursor-pointer flex items-center ${
-              activeSection === "pricing" ? "text-prime" : "text-textPrimary"
-            }`}
-            onClick={() => scrollToSection("pricing")}
-          >
-            {activeSection === "pricing" && (
-              <span className="w-2 h-2 bg-prime rounded-full mr-2"></span>
-            )}
-            cennik
-          </p>
-          <p
-            className={`cursor-pointer flex items-center ${
-              activeSection === "barbers" ? "text-prime" : "text-textPrimary"
-            }`}
-            onClick={() => scrollToSection("barbers")}
-          >
-            {activeSection === "barbers" && (
-              <span className="w-2 h-2 bg-prime rounded-full mr-2"></span>
-            )}
-            barberzy
-          </p>
-          <p
-            className={`cursor-pointer flex items-center ${
-              activeSection === "works" ? "text-prime" : "text-textPrimary"
-            }`}
-            onClick={() => scrollToSection("works")}
-          >
-            {activeSection === "works" && (
-              <span className="w-2 h-2 bg-prime rounded-full mr-2"></span>
-            )}
-            nasze prace
-          </p>
-        </div>
+	useEffect(() => {
+		const handleScroll = () => {
+			const sections = ["about", "pricing", "barbers", "works"];
+			const scrollPosition = window.scrollY + window.innerHeight / 3;
 
-        {/* Desktop Right Side */}
-        <div className="hidden md:flex space-x-[32px] uppercase text-lg font-light">
-          <Link to="/blog">
-            <p
-              className={`cursor-pointer flex items-center ${
-                location.pathname.includes("/blog")
-                  ? "text-prime"
-                  : "text-textPrimary"
-              }`}
-            >
-              {location.pathname.includes("/blog") && (
-                <span className="w-2 h-2 bg-prime rounded-full mr-2"></span>
-              )}
-              blog
-            </p>
-          </Link>
-          <Link to="/training">
-            <p
-              className={`cursor-pointer flex items-center ${
-                location.pathname === "/training"
-                  ? "text-prime"
-                  : "text-textPrimary"
-              }`}
-            >
-              {location.pathname === "/training" && (
-                <span className="w-2 h-2 bg-prime rounded-full mr-2"></span>
-              )}
-              szkolenia
-            </p>
-          </Link>
-          <p className="text-prime cursor-pointer flex items-center gap-2">
-            <span>{`>`}</span>
-            <span>zarezerwuj</span>
-            <span>{`<`}</span>
-          </p>
-        </div>
+			for (let section of sections) {
+				const element = document.getElementById(section);
+				if (
+					element &&
+					element.offsetTop <= scrollPosition &&
+					element.offsetTop + element.offsetHeight > scrollPosition
+				) {
+					setActiveSection(section);
+					break;
+				}
+			}
+		};
 
-        {/* Mobile Menu Icon */}
-        <div className="md:hidden z-20">
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="text-3xl text-prime focus:outline-none"
-          >
-            {isMobileMenuOpen ? (
-              <AiOutlineClose style={{ color: "#FFFFFF" }} />
-            ) : (
-              <img src={BurgerMenu} style={{ height: "20px" }} />
-            )}
-          </button>
-        </div>
-      </div>
+		window.addEventListener("scroll", handleScroll);
+		return () => {
+			window.removeEventListener("scroll", handleScroll);
+		};
+	}, []);
 
-      {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-75 backdrop-blur-md flex flex-col justify-center items-center text-lg font-light uppercase z-10">
-          <ul className="flex flex-col gap-8 text-center text-white text-[18px]">
-            <li
-              onClick={() => {
-                scrollToSection("about");
-                setIsMobileMenuOpen(false);
-              }}
-            >
-              o nas
-            </li>
-            <li
-              onClick={() => {
-                scrollToSection("pricing");
-                setIsMobileMenuOpen(false);
-              }}
-            >
-              cennik
-            </li>
-            <li
-              onClick={() => {
-                scrollToSection("barbers");
-                setIsMobileMenuOpen(false);
-              }}
-            >
-              barberzy
-            </li>
-            <li
-              onClick={() => {
-                scrollToSection("works");
-                setIsMobileMenuOpen(false);
-              }}
-            >
-              nasze prace
-            </li>
-            <li>
-              <Link to="/blog" onClick={() => setIsMobileMenuOpen(false)}>
-                blog
-              </Link>
-            </li>
-            <li>
-              <Link to="/training" onClick={() => setIsMobileMenuOpen(false)}>
-                szkolenia
-              </Link>
-            </li>
-            <li>
-              <p className="text-prime font-bold flex justify-center items-center gap-2">
-                <span>{`>`}</span>
-                <span>zarezerwuj</span>
-                <span>{`<`}</span>
-              </p>
-            </li>
-          </ul>
-        </div>
-      )}
-    </nav>
-  );
+	// useEffect(() => {
+	// 	if (
+	// 		location.pathname === "/training" ||
+	// 		location.pathname === "/blog" ||
+	// 		location.pathname === "/blog/boy-haircut"
+	// 	) {
+	// 		setActiveSection("");
+	// 	}
+	// }, [location.pathname]);
+
+	return (
+		<nav className='fixed top-5 md:top-10 left-0 w-full z-50 px-4 md:px-[98px]'>
+			<div className='flex justify-between items-center'>
+				{/* Logo */}
+				<div className='md:absolute md:left-1/2 md:transform md:-translate-x-1/2 z-20'>
+					<Link to='/'>
+						<img
+							src={Logo}
+							alt='Logo'
+							className='logo cursor-pointer h-[60px] md:h-[80px] md:mt-[-20px]'
+						/>
+					</Link>
+				</div>
+
+				{/* Desktop Links */}
+				<div className='hidden md:flex space-x-[32px] uppercase text-lg font-light'>
+					<p
+						className={`cursor-pointer flex items-center ${
+							activeSection === "about" ? "text-prime" : "text-textPrimary"
+						}`}
+						onClick={() => scrollToSection("about")}>
+						{activeSection === "about" && (
+							<span className='w-2 h-2 bg-prime rounded-full mr-2'></span>
+						)}
+						o nas
+					</p>
+					<p
+						className={`cursor-pointer flex items-center ${
+							activeSection === "pricing" ? "text-prime" : "text-textPrimary"
+						}`}
+						onClick={() => scrollToSection("pricing")}>
+						{activeSection === "pricing" && (
+							<span className='w-2 h-2 bg-prime rounded-full mr-2'></span>
+						)}
+						cennik
+					</p>
+					<p
+						className={`cursor-pointer flex items-center ${
+							activeSection === "barbers" ? "text-prime" : "text-textPrimary"
+						}`}
+						onClick={() => scrollToSection("barbers")}>
+						{activeSection === "barbers" && (
+							<span className='w-2 h-2 bg-prime rounded-full mr-2'></span>
+						)}
+						barberzy
+					</p>
+					<p
+						className={`cursor-pointer flex items-center ${
+							activeSection === "works" ? "text-prime" : "text-textPrimary"
+						}`}
+						onClick={() => scrollToSection("works")}>
+						{activeSection === "works" && (
+							<span className='w-2 h-2 bg-prime rounded-full mr-2'></span>
+						)}
+						nasze prace
+					</p>
+				</div>
+
+				{/* Desktop Right Side */}
+				<div className='hidden md:flex space-x-[32px] uppercase text-lg font-light'>
+					<Link to='/blog'>
+						<p
+							className={`cursor-pointer flex items-center ${
+								location.pathname.includes("/blog")
+									? "text-prime"
+									: "text-textPrimary"
+							}`}>
+							{location.pathname.includes("/blog") && (
+								<span className='w-2 h-2 bg-prime rounded-full mr-2'></span>
+							)}
+							blog
+						</p>
+					</Link>
+					<Link to='/training'>
+						<p
+							className={`cursor-pointer flex items-center ${
+								location.pathname === "/training"
+									? "text-prime"
+									: "text-textPrimary"
+							}`}>
+							{location.pathname === "/training" && (
+								<span className='w-2 h-2 bg-prime rounded-full mr-2'></span>
+							)}
+							szkolenia
+						</p>
+					</Link>
+					<p className='text-prime cursor-pointer flex items-center gap-2'>
+						<span>{`>`}</span>
+						<span>zarezerwuj</span>
+						<span>{`<`}</span>
+					</p>
+				</div>
+
+				{/* Mobile Menu Icon */}
+				<div className='md:hidden z-20'>
+					<button
+						onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+						className='text-3xl text-prime focus:outline-none'>
+						{isMobileMenuOpen ? (
+							<AiOutlineClose style={{ color: "#FFFFFF" }} />
+						) : (
+							<img src={BurgerMenu} style={{ height: "20px" }} />
+						)}
+					</button>
+				</div>
+			</div>
+
+			{/* Mobile Menu */}
+			{isMobileMenuOpen && (
+				<div className='fixed inset-0 bg-black bg-opacity-75 backdrop-blur-md flex flex-col justify-center items-center text-lg font-light uppercase z-10'>
+					<ul className='flex flex-col gap-8 text-center text-white text-[18px]'>
+						<li
+							onClick={() => {
+								scrollToSection("about");
+								setIsMobileMenuOpen(false);
+							}}>
+							o nas
+						</li>
+						<li
+							onClick={() => {
+								scrollToSection("pricing");
+								setIsMobileMenuOpen(false);
+							}}>
+							cennik
+						</li>
+						<li
+							onClick={() => {
+								scrollToSection("barbers");
+								setIsMobileMenuOpen(false);
+							}}>
+							barberzy
+						</li>
+						<li
+							onClick={() => {
+								scrollToSection("works");
+								setIsMobileMenuOpen(false);
+							}}>
+							nasze prace
+						</li>
+						<li>
+							<Link to='/blog' onClick={() => setIsMobileMenuOpen(false)}>
+								blog
+							</Link>
+						</li>
+						<li>
+							<Link to='/training' onClick={() => setIsMobileMenuOpen(false)}>
+								szkolenia
+							</Link>
+						</li>
+						<li>
+							<p className='text-prime font-bold flex justify-center items-center gap-2'>
+								<span>{`>`}</span>
+								<span>zarezerwuj</span>
+								<span>{`<`}</span>
+							</p>
+						</li>
+					</ul>
+				</div>
+			)}
+		</nav>
+	);
 };
 
 export default Navbar;
