@@ -188,7 +188,10 @@ const Blog = () => {
 			</div>
 		</div>
 	) : (
-		<div className='h-screen overflow-hidden' onWheel={handleScroll}>
+		<div
+			className='h-screen overflow-hidden'
+			onTouchStart={handleTouchStart}
+			onTouchMove={handleTouchMove}>
 			{/* Mobile View */}
 			<Navbar />
 			<div
