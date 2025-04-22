@@ -167,7 +167,10 @@ const Blog = () => {
 								className={`${
 									index === currentIndex &&
 									"w-5 h-5 border-[1px] border-gray-500 rounded-full flex items-center justify-center"
-								}`}>
+								}`}
+								onClick={() => setCurrentIndex(index)} // Added click handler
+								style={{ cursor: "pointer" }} // Added pointer cursor for better UX
+							>
 								<div
 									className={`rounded-full border-2 ${
 										index === currentIndex
@@ -213,7 +216,7 @@ const Blog = () => {
 					opacity: 0.8, // Added opacity to make it more transparent
 				}}>
 				<div className='flex flex-row justify-between w-full items-end'>
-					<div className='flex flex-col items-start mt-[20%] leading-none max-w-screen-sm z-20'>
+					<div className='flex flex-col items-start mt-[30%] leading-none max-w-screen-sm z-20'>
 						<div className='flex flex-col items-center space-y-3 mb-[19px]'>
 							{content.map((_, index) => (
 								<div
@@ -221,7 +224,10 @@ const Blog = () => {
 									className={`${
 										index === currentIndex &&
 										"w-5 h-5 border-[1px] border-gray-500 rounded-full flex items-center justify-center"
-									}`}>
+									}`}
+									onClick={() => setCurrentIndex(index)} // Added click handler
+									style={{ cursor: "pointer" }} // Added pointer cursor for better UX
+								>
 									<div
 										className={`rounded-full border-2 ${
 											index === currentIndex

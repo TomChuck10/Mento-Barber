@@ -19,8 +19,6 @@ const Navbar = () => {
 		{ name: "nasze prace", id: "works" },
 	];
 
-	console.log(location.pathname);
-
 	useEffect(() => {
 		if (location.pathname !== "/") {
 			setActiveSection(null);

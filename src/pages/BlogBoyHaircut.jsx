@@ -168,13 +168,6 @@ const BlogBoyHaircut = () => {
 					/>
 				</div>
 			</div>
-
-			<img
-				src={Gradient}
-				alt='Gradient'
-				className='fixed w-full h-auto pointer-events-none z-[-1] opacity-70'
-				style={{ top: "-50%" }}
-			/>
 		</div>
 	);
 };
