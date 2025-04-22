@@ -114,10 +114,17 @@ const Blog = () => {
 
 	const handleTouchMove = event => {
 		const touchEnd = event.touches[0].clientY;
-		if (touchStart - touchEnd > 50 && currentIndex < content.length - 1) {
+		const distance = touchStart - touchEnd;
+
+		// Minimalna odległość przesunięcia, aby zmienić sekcję
+		const threshold = 100;
+
+		if (distance > threshold && currentIndex < content.length - 1) {
 			setCurrentIndex(prev => prev + 1);
-		} else if (touchEnd - touchStart > 50 && currentIndex > 0) {
+			setTouchStart(touchEnd); // Resetuj punkt początkowy, aby uniknąć wielokrotnego przeskakiwania
+		} else if (distance < -threshold && currentIndex > 0) {
 			setCurrentIndex(prev => prev - 1);
+			setTouchStart(touchEnd); // Resetuj punkt początkowy, aby uniknąć wielokrotnego przeskakiwania
 		}
 	};
 
@@ -206,7 +213,7 @@ const Blog = () => {
 					opacity: 0.8, // Added opacity to make it more transparent
 				}}>
 				<div className='flex flex-row justify-between w-full items-end'>
-					<div className='flex flex-col items-start mt-0 leading-none max-w-screen-sm z-20'>
+					<div className='flex flex-col items-start mt-[20%] leading-none max-w-screen-sm z-20'>
 						<div className='flex flex-col items-center space-y-3 mb-[19px]'>
 							{content.map((_, index) => (
 								<div
@@ -235,7 +242,7 @@ const Blog = () => {
 						</p>
 						<button
 							className='button p-[16px] border-2 w-full border-prime rounded-[16px] text-prime mb-[96px] mt-[24px]'
-							onClick={() => navigate(`/blog/${content[currentIndex].id}`)}>
+							onClick={() => navigate(`/blog/${content[currentIndex].path}`)}>
 							Kliknij aby przeczytać
 						</button>
 					</div>
