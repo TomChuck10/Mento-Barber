@@ -110,7 +110,13 @@ const BlogBoyHaircut = () => {
 					<div
 						className='w-full bg-[#171D1F] flex flex-col p-[32px] m-[16px] rounded-[10px] z-10'
 						style={{ boxShadow: "0px 8px 10px #00000099" }}>
-						<div className='h-[100px] bg-prime rounded-[6px]'></div>
+						<div className='h-[200px] rounded-[6px] overflow-hidden flex justify-center items-center'>
+							<img
+								src={BoyHaircut}
+								alt='panel'
+								className='w-full h-auto object-cover'
+							/>
+						</div>
 						<p className='text-[12px] text-white mt-[32px] font-light'>
 							Dodano: 24.03.2025
 						</p>
