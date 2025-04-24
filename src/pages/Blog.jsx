@@ -39,7 +39,7 @@ const Blog = () => {
 			description:
 				"W świecie męskich fryzur jednym z najbardziej klasycznych i eleganckich stylów jest bez wątpienia „slick back” – czyli fryzura męska zaczesana do tyłu. Ten ponadczasowy look zdobi głowy mężczyzn od dziesięcioleci, nadając im pewności siebie i stylowego wyrazu.",
 			image: Slickback,
-			path: "boy-haircut",
+			path: "slick-back",
 		},
 		{
 			id: 3,
