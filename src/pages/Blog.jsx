@@ -47,7 +47,7 @@ const Blog = () => {
 			description:
 				"Rok 2024 przynosi ze sobą nie tylko nowe wyzwania, ale również świeże i zaskakujące pomysły w świecie męskich fryzur. 5 Propozycji na męskie fryzury na rok 2024 – Pośród nich znajdziesz zarówno klasyczne propozycje, jak i te bardziej eksperymentalne. Zachęcamy do bliższego poznania czterech kluczowych trendów, które zdominują męskie fryzury w nadchodzącym roku, a także do odkrycia dwóch dodatkowych propozycji, które z pewnością przyciągną uwagę odważnych dżentelmenów.",
 			image: ManHaicut,
-			path: "boy-haircut",
+			path: "new-haircuts",
 		},
 		{
 			id: 4,
@@ -55,7 +55,7 @@ const Blog = () => {
 			description:
 				"Czy Męska fryzura z grzywką to dobry pomysł ? Sprawdźmy. Grzywka w męskiej fryzurze to element, który nadaje charakteru i stylu. W ciągu ostatnich lat grzywki wróciły do mody, co otworzyło szerokie pole do eksperymentowania z różnymi fryzurami. Niezależnie od tego, czy masz kręcone, proste, czy falowane włosy, istnieje wiele interesujących pomysłów na męskie fryzury z grzywką. Przedstawiamy dziesięć inspirujących propozycji, które pomogą Ci wybrać idealny look.",
 			image: Bangs,
-			path: "boy-haircut",
+			path: "bangs",
 		},
 		{
 			id: 5,
@@ -63,7 +63,7 @@ const Blog = () => {
 			description:
 				"Fryzura skin fade to jedna z najbardziej znanych i popularnych fryzur męskich. Jej charakterystyczną cechą jest stopniowe przechodzenie z bardzo krótkich włosów na górze głowy do praktycznie wygolonej skóry po bokach i z tyłu. To styl, który zdobył ogromną popularność w ostatnich latach i zyskuje coraz więcej zwolenników. Jednak czy jest odpowiedni dla każdego?",
 			image: SkinFade,
-			path: "boy-haircut",
+			path: "skin-fade",
 		},
 		{
 			id: 6,

@@ -4,6 +4,18 @@ import Texture from "../assets/texture.png";
 import Gradient from "../assets/gradient.svg";
 import { useIsMobile } from "../Hooks/useIsMobile";
 import BoyHaircut from "../assets/fryzury_chlopcy.png";
+import boy1 from "../assets/boy/boy1.jpg";
+import boy2 from "../assets/boy/boy2.jpg";
+import boy3 from "../assets/boy/boy3.jpg";
+import boy4 from "../assets/boy/boy4.jpg";
+import boy5 from "../assets/boy/boy5.jpg";
+import boy6 from "../assets/boy/boy6.jpg";
+import boy7 from "../assets/boy/boy7.jpg";
+import boy8 from "../assets/boy/boy8.jpg";
+import boy9 from "../assets/boy/boy9.jpg";
+import boy10 from "../assets/boy/boy10.jpg";
+import boy11 from "../assets/boy/boy11.jpg";
+import boy12 from "../assets/boy/boy12.jpg";
 
 const BlogBoyHaircut = () => {
 	const isMobile = useIsMobile();
@@ -22,7 +34,6 @@ const BlogBoyHaircut = () => {
 					backgroundBlendMode: "multiply",
 				}}
 			/>
-
 			{/* Kontener z przewijaną treścią */}
 			<div className='relative h-screen overflow-auto'>
 				<div className='flex items-center justify-center mt-[10%] mb-[5%]'>
@@ -51,12 +62,33 @@ const BlogBoyHaircut = () => {
 							look dla swojego dziecka!
 						</p>
 						<hr className='border-[white] opacity-5 my-[32px]' />
-						<div className='flex flex-row items-center justify-center gap-[16px]'>
-							<div className='w-full h-[300px] bg-gray-300 rounded-[6px]'></div>
-							<div className='w-full h-[300px] bg-gray-300 rounded-[6px]'></div>
-							<div className='w-full h-[300px] bg-gray-300 rounded-[6px]'></div>
+						<div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[16px] mt-[12px] mb-[24px]'>
+							{[
+								boy1,
+								boy2,
+								boy3,
+								boy4,
+								boy5,
+								boy6,
+								boy7,
+								boy8,
+								boy9,
+								boy10,
+								boy11,
+								boy12,
+							].map((boy, index) => (
+								<div
+									key={index}
+									className='w-full h-[500px] bg-gray-300 rounded-[6px] overflow-hidden'>
+									<img
+										src={boy}
+										alt={`boy${index + 1}`}
+										className='w-full h-full object-cover object-top'
+									/>
+								</div>
+							))}
 						</div>
-						<h1 className='text-[32px] text-prime font-bold mt-[64px]'>
+						<h1 className='text-[32px] text-prime font-bold'>
 							1. Fryzurka Młodzieżowa
 						</h1>
 						<p className='text-[16px] text-white mt-[12px] font-light'>
@@ -81,7 +113,6 @@ const BlogBoyHaircut = () => {
 					</div>
 				</div>
 			</div>
-
 			<img
 				src={Gradient}
 				alt='Gradient'
@@ -90,7 +121,7 @@ const BlogBoyHaircut = () => {
 			/>
 		</div>
 	) : (
-		<div className='h-screen overflow-hidden'>
+		<div className='relative h-screen overflow-hidden'>
 			<Navbar />
 			{/* Stałe tło */}
 			<div
@@ -106,7 +137,7 @@ const BlogBoyHaircut = () => {
 
 			{/* Kontener z przewijaną treścią */}
 			<div className='relative h-screen overflow-auto'>
-				<div className='flex items-center justify-center mt-[100px] mb-[5%]'>
+				<div className='flex items-center justify-center mt-[100px] mb-[5%] overflow-hidden'>
 					<div
 						className='w-full bg-[#171D1F] flex flex-col p-[32px] m-[16px] rounded-[10px] z-10'
 						style={{ boxShadow: "0px 8px 10px #00000099" }}>
@@ -132,12 +163,33 @@ const BlogBoyHaircut = () => {
 							look dla swojego dziecka!
 						</p>
 						<hr className='border-[white] opacity-5 my-[32px]' />
-						<div className='flex flex-col items-center justify-center gap-[16px]'>
-							<div className='w-full h-[300px] bg-gray-300 rounded-[6px]'></div>
-							<div className='w-full h-[300px] bg-gray-300 rounded-[6px]'></div>
-							<div className='w-full h-[300px] bg-gray-300 rounded-[6px]'></div>
+						<div className='grid grid-cols-2 gap-[16px] mt-[12px] mb-[24px]'>
+							{[
+								boy1,
+								boy2,
+								boy3,
+								boy4,
+								boy5,
+								boy6,
+								boy7,
+								boy8,
+								boy9,
+								boy10,
+								boy11,
+								boy12,
+							].map((boy, index) => (
+								<div
+									key={index}
+									className='w-full h-[350px] bg-gray-300 rounded-[6px] overflow-hidden'>
+									<img
+										src={boy}
+										alt={`boy${index + 1}`}
+										className='w-full h-full object-cover object-top'
+									/>
+								</div>
+							))}
 						</div>
-						<h1 className='text-[24px] text-prime font-bold mt-[64px]'>
+						<h1 className='text-[24px] text-prime font-bold'>
 							1. Fryzurka Młodzieżowa
 						</h1>
 						<p className='text-[14px] text-white mt-[12px] font-light'>
@@ -160,14 +212,14 @@ const BlogBoyHaircut = () => {
 							codziennego noszenia.
 						</p>
 					</div>
-					<img
-						src={Gradient}
-						alt='Gradient'
-						className='absolute top-0 z-0 w-[800px] max-w-none'
-						style={{ right: "-200px", top: "-200px" }}
-					/>
 				</div>
 			</div>
+			<img
+				src={Gradient}
+				alt='Gradient'
+				className='absolute top-0 z-0 w-[800px] max-w-none'
+				style={{ right: "-200px", top: "-200px" }}
+			/>
 		</div>
 	);
 };
