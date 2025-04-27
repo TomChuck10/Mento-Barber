@@ -71,7 +71,7 @@ const Blog = () => {
 			description:
 				"Łupież na brodzie to problem, który może dotknąć nie tylko skórę głowy, ale także obszar twarzy. To irytujące schorzenie może prowadzić do świądu, pieczenia oraz spadku pewności siebie. Na szczęście istnieje wiele sposobów, aby zwalczyć łupież na brodzie i przywrócić zdrowy i czysty wygląd. W tym artykule dowiesz się, jak radzić sobie z łupieżem na brodzie, łuszczącą się skórą pod brodą oraz problemem łupieżu na brodzie i brwiach.",
 			image: Beard,
-			path: "boy-haircut",
+			path: "beard-dandruff",
 		},
 		{
 			id: 7,
@@ -79,7 +79,7 @@ const Blog = () => {
 			description:
 				"Słupek barberski, znany również jako Barber Pole, to ikoniczny symbol salonów fryzjerskich i barberskich. Te biało-niebieskie słupki mają bogatą historię i symbolikę, której źródła sięgają wieków. W tym artykule zgłębimy historię Barber Pole, zrozumiemy jego znaczenie, przeanalizujemy koszty takiego znaku rozpoznawczego, a także odkryjemy fascynującą ciekawostkę dotyczącą jego pochodzenia.",
 			image: BarberPole,
-			path: "boy-haircut",
+			path: "barber-pole",
 		},
 		{
 			id: 8,
@@ -87,7 +87,7 @@ const Blog = () => {
 			description:
 				"Kiedy mówimy o fryzurze Buzz Cut, nie ma miejsca na zbędne komplikacje. Fryzura Buzz Cut o idealny wybór dla tych, którzy cenią sobie minimalistyczny styl i wygodę. W tym artykule zgłębimy tajemnice fryzury Buzz Cut, odkryjemy, komu pasuje, oraz przyjrzymy się, jak można ją dostosować do męskich zakoli.",
 			image: BuzzCut,
-			path: "boy-haircut",
+			path: "buzz-cut",
 		},
 		{
 			id: 9,
@@ -95,7 +95,7 @@ const Blog = () => {
 			description:
 				"Zakola mogą stanowić wyzwanie, ale odpowiednio dobrana fryzura może zdziałać cuda, pomagając ukryć to, co Cię niepokoi. To problem, który dotyka wielu mężczyzn, i nie ma w tym nic złego. Zakola są naturalną częścią procesu starzenia się, jednak nie każdy jest nimi zachwycony. Dla tych, którzy chcieliby zatuszować ten aspekt swojego wyglądu, istnieje wiele kreatywnych rozwiązań.",
 			image: Hairline,
-			path: "boy-haircut",
+			path: "receding-hairline-hairstyle",
 		},
 	];
 
