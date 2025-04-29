@@ -162,25 +162,40 @@ const HomePage = () => {
 									Nad Babicą 2, Bochnia
 								</div>
 								<div className='border-2 border-gray-400 rounded-full py-2 px-5 text-textPrimary'>
-									+48 123 456 789
+									+48 798 144 399
 								</div>
 							</div>
 							<div className='flex space-x-4 text-textPrimary items-center'>
-								<img
-									src={FacebookLogo}
-									alt='facebook_logo'
-									style={{ height: "48px" }}
-								/>
-								<img
-									src={InstagramLogo}
-									alt='instagram_logo'
-									style={{ height: "38px" }}
-								/>
-								<img
-									src={TikTokLogo}
-									alt='tiktok_logo'
-									style={{ height: "38px" }}
-								/>
+								<a
+									href='https://www.facebook.com/MentoBarberShop'
+									target='_blank'
+									rel='noopener noreferrer'>
+									<img
+										src={FacebookLogo}
+										alt='facebook_logo'
+										style={{ height: "48px" }}
+									/>
+								</a>
+								<a
+									href='https://www.instagram.com/mento.barbershop/'
+									target='_blank'
+									rel='noopener noreferrer'>
+									<img
+										src={InstagramLogo}
+										alt='instagram_logo'
+										style={{ height: "38px" }}
+									/>
+								</a>
+								<a
+									href='https://www.tiktok.com/@mento_barbershop'
+									target='_blank'
+									rel='noopener noreferrer'>
+									<img
+										src={TikTokLogo}
+										alt='instagram_logo'
+										style={{ height: "38px" }}
+									/>
+								</a>
 							</div>
 						</motion.div>
 						<motion.img
@@ -221,21 +236,36 @@ const HomePage = () => {
 						}}>
 						<div className='flex flex-col items-center  mt-[10%] leading-none z-20 '>
 							<div className='flex space-x-4 items-center gap-[32px] mb-[24px]'>
-								<img
-									src={FacebookLogo}
-									alt='facebook_logo'
-									style={{ height: "48px" }}
-								/>
-								<img
-									src={InstagramLogo}
-									alt='instagram_logo'
-									style={{ height: "38px" }}
-								/>
-								<img
-									src={TikTokLogo}
-									alt='tiktok_logo'
-									style={{ height: "38px" }}
-								/>
+								<a
+									href='https://www.facebook.com/MentoBarberShop'
+									target='_blank'
+									rel='noopener noreferrer'>
+									<img
+										src={FacebookLogo}
+										alt='facebook_logo'
+										style={{ height: "48px" }}
+									/>
+								</a>
+								<a
+									href='https://www.instagram.com/mento.barbershop/'
+									target='_blank'
+									rel='noopener noreferrer'>
+									<img
+										src={InstagramLogo}
+										alt='instagram_logo'
+										style={{ height: "38px" }}
+									/>
+								</a>
+								<a
+									href='https://www.tiktok.com/@mento_barbershop'
+									target='_blank'
+									rel='noopener noreferrer'>
+									<img
+										src={TikTokLogo}
+										alt='instagram_logo'
+										style={{ height: "38px" }}
+									/>
+								</a>
 							</div>
 							<h1
 								className='text-textPrimary uppercase text-titleOne font-bold text-center'
@@ -268,7 +298,7 @@ const HomePage = () => {
 									Nad Babicą 2, Bochnia
 								</div>
 								<div className='border-2 border-gray-400 rounded-full w-full py-[12px] px-5 text-textPrimary text-center'>
-									+48 123 456 789
+									+48 798 144 399
 								</div>
 							</div>
 						</div>

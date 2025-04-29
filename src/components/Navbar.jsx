@@ -115,7 +115,14 @@ const Navbar = () => {
 					</Link>
 					<p className='text-prime cursor-pointer flex items-center gap-2'>
 						<span>{`>`}</span>
-						<span>zarezerwuj</span>
+						<span>
+							<a
+								href='https://booksy.com/pl-pl/118318_mento-barber-shop_barber-shop_10189_bochnia#ba_s=seo'
+								target='_blank'
+								rel='noopener noreferrer'>
+								zarezerwuj
+							</a>
+						</span>
 						<span>{`<`}</span>
 					</p>
 				</div>
@@ -191,7 +198,14 @@ const Navbar = () => {
 						<li>
 							<p className='text-prime font-bold flex justify-center items-center gap-2'>
 								<span>{`>`}</span>
-								<span>zarezerwuj</span>
+								<span>
+									<a
+										href='https://booksy.com/pl-pl/118318_mento-barber-shop_barber-shop_10189_bochnia#ba_s=seo'
+										target='_blank'
+										rel='noopener noreferrer'>
+										zarezerwuj
+									</a>
+								</span>
 								<span>{`<`}</span>
 							</p>
 						</li>
