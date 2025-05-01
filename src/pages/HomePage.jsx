@@ -636,6 +636,13 @@ const HomePage = () => {
 					backgroundRepeat: "no-repeat",
 					backgroundPosition: "center",
 					backgroundBlendMode: "multiply",
+				}}
+				onWheel={e => {
+					if (e.deltaY > 0) {
+						document
+							.getElementById("about")
+							?.scrollIntoView({ behavior: "smooth" });
+					}
 				}}>
 				<div className='w-full pt-[120px]'>
 					<div className='w-full'>
