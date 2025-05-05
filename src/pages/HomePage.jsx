@@ -618,13 +618,31 @@ const HomePage = () => {
 				</Section>
 			)}
 			{/* Barbers */}
-			<Barber2 />
-			<Barber3 />
-			<Barber4 />
-			<Barber5 />
-			<Barber6 />
+			<Barber2
+				slideInFromRight={slideInFromRight}
+				fadeInFromLeft={fadeInFromLeft}
+			/>
+			<Barber3
+				slideInFromRight={slideInFromRight}
+				fadeInFromLeft={fadeInFromLeft}
+			/>
+			<Barber4
+				slideInFromRight={slideInFromRight}
+				fadeInFromLeft={fadeInFromLeft}
+			/>
+			<Barber5
+				slideInFromRight={slideInFromRight}
+				fadeInFromLeft={fadeInFromLeft}
+			/>
+			<Barber6
+				slideInFromRight={slideInFromRight}
+				fadeInFromLeft={fadeInFromLeft}
+			/>
 			<div id='barbers-end'>
-				<Barber7 />
+				<Barber7
+					slideInFromRight={slideInFromRight}
+					fadeInFromLeft={fadeInFromLeft}
+				/>
 			</div>
 			{/* Czwarty ekran - nasze prace */}
 			<div

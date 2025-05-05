@@ -1,10 +1,13 @@
+import PropTypes from "prop-types";
+
 import Gradient from "../assets/gradient.svg";
 import Barber from "../assets/barber7.png";
 import Texture from "../assets/texture.png";
+import { motion } from "framer-motion";
 
 import { useIsMobile } from "../Hooks/useIsMobile";
 
-const Barber7 = () => {
+const Barber7 = ({ slideInFromRight, fadeInFromLeft }) => {
 	const isMobile = useIsMobile();
 
 	return (
@@ -19,7 +22,12 @@ const Barber7 = () => {
 						backgroundPosition: "center",
 						backgroundBlendMode: "multiply",
 					}}>
-					<div className='text-start p-10'>
+					<motion.div
+						className='text-start p-10'
+						initial='hidden'
+						whileInView='visible'
+						viewport={{ once: true }}
+						variants={fadeInFromLeft}>
 						<h1
 							className='text-9xl font-bold text-orange-500'
 							style={{
@@ -27,9 +35,9 @@ const Barber7 = () => {
 								fontWeight: "bold",
 								textTransform: "uppercase",
 								color: "transparent",
-								WebkitTextStroke: "2px #ff6600", // Obramowanie w WebKit
+								WebkitTextStroke: "2px #ff6600",
 								textShadow:
-									"0 0 0px #0B0C0F, 0 0 0px #0B0C0F, 0 0 10px #E67543", // Efekt neonowy
+									"0 0 0px #0B0C0F, 0 0 0px #0B0C0F, 0 0 10px #E67543",
 							}}>
 							GABI
 						</h1>
@@ -40,10 +48,13 @@ const Barber7 = () => {
 							przy fryzurach typu french crop, ale klasykę w postaci side part
 							również często i chętnie ścinam.
 						</p>
-					</div>
-					<div
+					</motion.div>
+					<motion.div
 						className='absolute w-full left-0 right-0 z-1'
-						style={{ zIndex: 1 }}>
+						initial='hidden'
+						whileInView='visible'
+						viewport={{ once: true }}
+						variants={slideInFromRight}>
 						<h1
 							className='font-bold uppercase text-center'
 							style={{
@@ -51,13 +62,12 @@ const Barber7 = () => {
 								fontWeight: "bold",
 								color: "transparent",
 								WebkitTextStroke: "4px #ff6600",
-								opacity: 0.05,
 								width: "100%",
 								whiteSpace: "nowrap",
 							}}>
 							GABI
 						</h1>
-					</div>
+					</motion.div>
 					<img
 						src={Gradient}
 						alt='Gradient'
@@ -132,3 +142,8 @@ const Barber7 = () => {
 };
 
 export default Barber7;
+
+Barber7.propTypes = {
+	slideInFromRight: PropTypes.object,
+	fadeInFromLeft: PropTypes.object,
+};
