@@ -10,11 +10,39 @@ import { useIsMobile } from "../Hooks/useIsMobile";
 import ShortHair from "../assets/shortHair.png";
 import LongHair from "../assets/longHair.png";
 import Beard from "../assets/beard.png";
+import { IoInformationCircleOutline } from "react-icons/io5";
+import { IoClose } from "react-icons/io5";
 
 const Training = () => {
 	const isMobile = useIsMobile();
 
 	const [activePanel, setActivePanel] = useState(0);
+
+	const [dialogText, setDialogText] = useState(null);
+	const [isDialogOpen, setIsDialogOpen] = useState(false);
+
+	const [reservationDialogText, setReservationDialogText] = useState(null);
+	const [isReservationDialogOpen, setIsReservationDialogOpen] = useState(false);
+
+	const openDialog = index => {
+		setDialogText(data[index].tutorial);
+		setIsDialogOpen(true);
+	};
+
+	const closeDialog = () => {
+		setIsDialogOpen(false);
+		setDialogText(null);
+	};
+
+	const openReservationDialog = index => {
+		setReservationDialogText(data[index].tutorial);
+		setIsReservationDialogOpen(true);
+	};
+
+	const closeReservationDialog = () => {
+		setIsReservationDialogOpen(false);
+		setReservationDialogText(null);
+	};
 
 	const data = [
 		{
@@ -22,18 +50,131 @@ const Training = () => {
 			title: "Krótkie włosy + cieniowanie od zera (fade)",
 			description:
 				"Perfekcyjny fade to podstawa nowoczesnego barberingu. W tym panelu skupimy się na technice cieniowania od zera, precyzyjnym przejściu tonalnym i odpowiednim doborze długości do kształtu głowy. Pokażemy, jak pracować z maszynką, trymerem i shaverem, by uzyskać idealne wykończenie. Szkolenie obejmuje zarówno teorię, jak i praktykę na modelach, abyś mógł doszlifować swoje umiejętności i zyskać pewność w pracy z krótkimi fryzurami.",
+			tutorial: "KRÓTKIE WŁOSY + CIENIOWANIE OD ZERA (FADE) - PLAN DNIA",
+			data: "6 lipca 2025",
+			plan: (
+				<>
+					<div className='mb-[32px]'>
+						<p className='font-bold'>09:00 - 12:00</p>
+						<p>Teoria + prezentacja multimedialna + konsultacje</p>
+						<p>→ Technika cieniowania, główne techniki, proporcje</p>
+						<p>→ Analiza głowy, tekstury włosów, dobór fryzury do klienta</p>
+						<p>→ Analiza głowy, tekstury włosów, dobór fryzury do klienta</p>
+						<p>
+							→ Dobór i omówienie narzędzi do pracy (maszynki, nasadki, trymery,
+							nożyczki)
+						</p>
+					</div>
+					<div className='mb-[32px]'>
+						<p className='font-bold'>12:00 - 12:30</p>
+						<p>Lunch dla uczestników – wliczony w cenę szkolenia</p>
+					</div>
+					<div className='mb-[32px]'>
+						<p className='font-bold'>12:30 - 15:00</p>
+						<p>Model pokazowy dla szkoleniowca</p>
+						<p>→ Pełne cięcie z omówieniem krok po kroku</p>
+						<p>→ Detale, wykończenie, technika pracy maszynką i nożyczkami</p>
+					</div>
+					<div className='mb-[32px]'>
+						<p className='font-bold'>15:00 - 18:00</p>
+						<p>Warsztaty – praca uczestników na modelach</p>
+						<p>→ Praktyczne wykorzystanie wiedzy</p>
+						<p>→ Cięcie pod okiem szkoleniowców, indywidualny feedback</p>
+					</div>
+					<div>
+						<p className='font-bold'>18:00</p>
+						<p>Zakończenie dnia – rozdanie dyplomów i upominków</p>
+					</div>
+				</>
+			),
 		},
 		{
 			photo: LongHair,
 			title: "Długie włosy , praca na nożyczkach",
 			description:
 				"Precyzyjna praca nożyczkami to podstawa przy dłuższych fryzurach. W tym panelu przepracujemy główne techniki strzyżenia, takie jak linia , gradacja , warstwa , aby dopasować fryzurę do kształtu głowy i struktury włosa. Nauczysz się, jak kontrolować napięcie pasma, jak pracować sekcyjnie i uzyskiwać płynne przejścia. Skupimy się na ergonomii ruchu oraz doborze narzędzi, byś mógł świadomie budować formę każdej fryzury.",
+			tutorial: "DŁUGIE WŁOSY + PRACA NA NOŻYCZKACH - PLAN DNIA",
+			data: "24 sierpnia 2025",
+			plan: (
+				<>
+					<div className='mb-[32px]'>
+						<p className='font-bold'>09:00 - 12:00</p>
+						<p>Teoria + prezentacja multimedialna + konsultacje</p>
+						<p>→ Technika cieniowania, główne techniki, proporcje</p>
+						<p>→ Analiza głowy, tekstury włosów, dobór fryzury do klienta</p>
+						<p>→ Analiza głowy, tekstury włosów, dobór fryzury do klienta</p>
+						<p>
+							→ Dobór i omówienie narzędzi do pracy (maszynki, nasadki, trymery,
+							nożyczki)
+						</p>
+					</div>
+					<div className='mb-[32px]'>
+						<p className='font-bold'>12:00 - 12:30</p>
+						<p>Lunch dla uczestników – wliczony w cenę szkolenia</p>
+					</div>
+					<div className='mb-[32px]'>
+						<p className='font-bold'>12:30 - 15:00</p>
+						<p>Model pokazowy dla szkoleniowca</p>
+						<p>→ Pełne cięcie z omówieniem krok po kroku</p>
+						<p>→ Detale, wykończenie, technika pracy maszynką i nożyczkami</p>
+					</div>
+					<div className='mb-[32px]'>
+						<p className='font-bold'>15:00 - 18:00</p>
+						<p>Warsztaty – praca uczestników na modelach</p>
+						<p>→ Praktyczne wykorzystanie wiedzy</p>
+						<p>→ Cięcie pod okiem szkoleniowców, indywidualny feedback</p>
+					</div>
+					<div>
+						<p className='font-bold'>18:00</p>
+						<p>Zakończenie dnia – rozdanie dyplomów i upominków</p>
+					</div>
+				</>
+			),
 		},
 		{
 			photo: Beard,
 			title: "Krótkie włosy , praca nmaszynką",
 			description:
 				"Idealnie przycięta broda to nie tylko estetyka, ale i komfort klienta. W tym panelu nauczysz się cieniowania brody, jej konturowania i odpowiedniego skracania, by dopasować kształt do rysów twarzy. Skupimy się także na tonowaniu i pielęgnacji zarostu, aby uzyskać naturalny, zdrowy wygląd. Podczas praktycznej części dowiesz się, jak pracować maszynka , trymerem, brzytwą i nożyczkami, by broda wyglądała perfekcyjnie i była dopasowana do stylu klienta.",
+			tutorial: "BRODY: CIENIOWANIE • MODELOWANIE • TONOWANIE - PLAN DNIA",
+			data: "24 maja 2025",
+			plan: (
+				<>
+					<div className='mb-[32px]'>
+						<p className='font-bold'>09:00 - 10:30</p>
+						<p>Teoria + prezentacja</p>
+						<p>→ Różne typy brody i ich dopasowanie do kształtu twarzy</p>
+						<p>→ Linie naturalne vs geometryczne</p>
+						<p>→ Cieniowanie, konturowanie, wykończenie</p>
+						<p>→ Narzędzia, techniki, produkty i tonery</p>
+					</div>
+					<div className='mb-[32px]'>
+						<p className='font-bold'>10:30 - 12:30</p>
+						<p>Pierwszy model pokazowy – krótka broda</p>
+						<p>→ Opracowanie krok po kroku z pełnym omówieniem</p>
+						<p>→ Praca z konturem, cieniowaniem i tonowaniem</p>
+					</div>
+					<div className='mb-[32px]'>
+						<p className='font-bold'>12:30 - 15:00</p>
+						<p>Drugi model pokazowy – długa broda</p>
+						<p>→ Inne podejście, narzędzia i prowadzenie linii</p>
+						<p>→ Stylizacja, tekstura, objętość i pielęgnacja</p>
+					</div>
+					<div className='mb-[32px]'>
+						<p className='font-bold'>15:00 - 18:00</p>
+						<p>Praca uczestników na modelach</p>
+						<p>→ Każdy kursant wykonuje pełną stylizację brody</p>
+						<p>
+							→ Szkoleniowcy aktywnie pomagają w opracowaniu brody – od
+							planowania, przez wykonanie, aż po finalne wykończenie
+						</p>
+					</div>
+					<div>
+						<p className='font-bold'>18:00</p>
+						<p>Zakończenie dnia – rozdanie dyplomów i upominków</p>
+					</div>
+				</>
+			),
 		},
 	];
 
@@ -99,9 +240,23 @@ const Training = () => {
 									<p className='description text-[13px] text-white mx-[32px] mt-[10px] mb-[24px] font-light'>
 										{data[activePanel].description}
 									</p>
-									<button className='button border-2 border-prime rounded-[16px] mx-[32px] p-[12px] text-prime mb-[36px] mt-auto'>
-										Umów szkolenie
-									</button>
+									<div className='flex flex-row items-center justify-center mx-[32px] gap-[16px]'>
+										<button
+											className='border-2 border-prime rounded-[16px] p-[12px] text-prime mb-[36px] mt-auto flex items-center justify-center gap-[2px]'
+											style={{ width: "20%" }}
+											onClick={() => openDialog(activePanel)}>
+											<IoInformationCircleOutline
+												style={{ marginTop: "2px" }}
+											/>{" "}
+											Plan szkolenia
+										</button>
+										<button
+											className=' bg-prime rounded-[16px] p-[12px] text-white mb-[36px] mt-auto'
+											style={{ width: "80%" }}
+											onClick={() => openReservationDialog(activePanel)}>
+											Umów szkolenie
+										</button>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -112,6 +267,66 @@ const Training = () => {
 							style={{ top: "-50%" }}
 						/>
 					</div>
+					{isDialogOpen && (
+						<div
+							className='fixed inset-0 bg-[#00000088] backdrop-blur-sm flex justify-center items-center z-50'
+							onClick={closeDialog}>
+							<div
+								className='px-[48px] py-[32px] bg-[#171D1F] text-white rounded-[10px] min-w-[65%] max-h-[80vh] overflow-y-auto relative shadow-xl'
+								onClick={e => e.stopPropagation()}>
+								<p className='font-bold'>PLAN DNIA I TERMINY</p>
+								<div className='flex justify-between items-center'>
+									<p className='text-[24px] font-bold text-prime'>
+										{dialogText}
+									</p>
+									<button onClick={closeDialog} className='text-prime'>
+										<IoClose size={40} />
+									</button>
+								</div>
+								<hr className='border-[white] opacity-5 mt-[32px] mb-[16px]' />
+								<p>
+									<span className='font-bold'>Nadchodzące terminy: </span>
+									{data[activePanel].data}
+								</p>
+								<hr className='border-[white] opacity-5 mt-[16px] mb-[24px]' />
+								{data[activePanel].plan}
+							</div>
+						</div>
+					)}
+					{isReservationDialogOpen && (
+						<div
+							className='fixed inset-0 bg-[#00000088] backdrop-blur-sm flex justify-center items-center z-50'
+							onClick={closeReservationDialog}>
+							<div
+								className='px-[48px] py-[32px] bg-[#171D1F] text-white rounded-[10px] min-w-[65%] max-h-[80vh] overflow-y-auto relative shadow-xl'
+								onClick={e => e.stopPropagation()}>
+								<p className='font-bold'>UMÓW SZKOLENIE</p>
+								<div className='flex justify-between items-center'>
+									<p className='text-[24px] font-bold text-prime'>
+										{reservationDialogText}
+									</p>
+									<button
+										onClick={closeReservationDialog}
+										className='text-prime'>
+										<IoClose size={40} />
+									</button>
+								</div>
+								<hr className='border-[white] opacity-5 mt-[32px] mb-[16px]' />
+								<p>
+									Aby umówić szkolenie, skontaktuj się z nami telefonicznie lub
+									przez Instagram, podając nazwę szkolenia oraz interesujący Cię
+									termin.
+								</p>
+								<hr className='border-[white] opacity-5 mt-[16px] mb-[24px]' />
+								<p>
+									<span className='font-bold'>Telefon: </span>+48 123 456 789
+								</p>
+								<p>
+									<span className='font-bold'>Instagram: </span>@insta
+								</p>
+							</div>
+						</div>
+					)}
 					<style>{`
 				@media (min-width: 1800px) {
 					.title {
@@ -155,7 +370,15 @@ const Training = () => {
 								<p className='text-white text-[14px] font-light mb-6'>
 									{panel.description}
 								</p>
-								<button className='border-2 border-prime text-prime rounded-[12px] py-[16px] mb-2'>
+								<button
+									onClick={() => openDialog(activePanel)}
+									className='border-2 border-prime text-prime rounded-[12px] py-[16px] mb-2 flex justify-center items-center gap-2 '>
+									<IoInformationCircleOutline style={{ marginTop: "2px" }} />{" "}
+									Plan szkolenia
+								</button>
+								<button
+									onClick={() => openReservationDialog(activePanel)}
+									className='bg-prime text-white rounded-[12px] py-[16px] mb-2'>
 									Umów szkolenie
 								</button>
 							</div>
@@ -167,6 +390,67 @@ const Training = () => {
 						className='absolute top-0 z-0 w-[800px] max-w-none'
 						style={{ right: "-200px", top: "-200px" }}
 					/>
+					{isDialogOpen && (
+						<div
+							className='fixed inset-0 bg-[#00000088] backdrop-blur-sm flex justify-center items-center z-50'
+							onClick={closeDialog}>
+							<div
+								className='px-[48px] py-[32px] bg-[#171D1F] text-white rounded-[10px] h-[100vh] overflow-y-auto relative shadow-xl'
+								onClick={e => e.stopPropagation()}>
+								<p className='font-bold text-[12px]'>PLAN DNIA I TERMINY</p>
+								<div className='flex justify-between items-start gap-4'>
+									<p className='text-[20px] font-bold text-prime'>
+										{dialogText}
+										fgf{" "}
+									</p>
+									<button onClick={closeDialog} className='text-prime'>
+										<IoClose size={30} />
+									</button>
+								</div>
+								<hr className='mt-[32px] mb-[16px]' />
+								<p>
+									<span className='font-bold'>Nadchodzące terminy: </span>
+									{data[activePanel].data}
+								</p>
+								<hr className='mt-[16px] mb-[24px]' />
+								{data[activePanel].plan}
+							</div>
+						</div>
+					)}
+					{isReservationDialogOpen && (
+						<div
+							className='fixed inset-0 bg-[#00000088] backdrop-blur-sm flex justify-center items-center z-50'
+							onClick={closeReservationDialog}>
+							<div
+								className='px-[48px] py-[32px] bg-[#171D1F] text-white rounded-[10px] min-h-[30vh] overflow-y-auto relative shadow-xl'
+								onClick={e => e.stopPropagation()}>
+								<p className='font-bold text-[12px]'>UMÓW SZKOLENIE</p>
+								<div className='flex justify-between items-start gap-4'>
+									<p className='text-[20px] font-bold text-prime'>
+										{reservationDialogText}
+									</p>
+									<button
+										onClick={closeReservationDialog}
+										className='text-prime'>
+										<IoClose size={30} />
+									</button>
+								</div>
+								<hr className='border-[white] opacity-5 mt-[32px] mb-[16px]' />
+								<p>
+									Aby umówić szkolenie, skontaktuj się z nami telefonicznie lub
+									przez Instagram, podając nazwę szkolenia oraz interesujący Cię
+									termin.
+								</p>
+								<hr className='border-[white] opacity-5 mt-[16px] mb-[24px]' />
+								<p>
+									<span className='font-bold'>Telefon: </span>+48 123 456 789
+								</p>
+								<p>
+									<span className='font-bold'>Instagram: </span>@insta
+								</p>
+							</div>
+						</div>
+					)}
 				</div>
 			)}
 		</>
