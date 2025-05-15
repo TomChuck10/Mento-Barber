@@ -22,14 +22,20 @@ import Photo1 from "../assets/page1photo.png";
 import Photo2 from "../assets/page2photo.png";
 import Gradient from "../assets/gradient.svg";
 
-// Haircuts
-import HaircutPhoto from "../assets/haircut1photo.jpg";
-import Haircut2 from "../assets/haircut2.png";
-import Haircut3 from "../assets/haircut3.png";
-import Haircut4 from "../assets/haircut4.png";
-import Haircut5 from "../assets/haircut5.png";
-import Haircut6 from "../assets/haircut6.png";
-import Haircut7 from "../assets/haircut7.png";
+// Gallery
+import galeria1 from "../assets/gallery/galeria1.jpg";
+import galeria2 from "../assets/gallery/galeria2.jpg";
+import galeria3 from "../assets/gallery/galeria3.jpg";
+import galeria4 from "../assets/gallery/galeria4.jpg";
+import galeria5 from "../assets/gallery/galeria5.jpg";
+import galeria6 from "../assets/gallery/galeria6.jpg";
+import galeria7 from "../assets/gallery/galeria7.jpg";
+import galeria8 from "../assets/gallery/galeria8.jpg";
+import galeria9 from "../assets/gallery/galeria9.jpg";
+import galeria10 from "../assets/gallery/galeria10.jpg";
+import galeria11 from "../assets/gallery/galeria11.jpg";
+import galeria12 from "../assets/gallery/galeria12.jpg";
+import galeria13 from "../assets/gallery/galeria13.jpg";
 
 // Barbers
 import PhotoJimmy from "../assets/page3jimmy.png";
@@ -346,30 +352,32 @@ const HomePage = () => {
 							viewport={{ once: true }}
 							variants={fadeInFromLeft}>
 							{[
-								{ name: "STRZYŻENIE MĘSKIE", price: "80 PLN", time: "30 min" },
-								{ name: "WŁOSY + BRODA", price: "130 PLN", time: "60 min" },
-								{ name: "STRZYŻENIE BRODY", price: "60 PLN", time: "30 min" },
+								{ name: "STRZYŻENIE MĘSKIE", price: "85 PLN", time: "45 min" },
+								{ name: "WŁOSY + BRODA", price: "140 PLN", time: "60 min" },
+								{ name: "STRZYŻENIE BRODY", price: "75 PLN", time: "30 min" },
 								{
 									name: "BRODA + ODSIWIANIE",
-									price: "130 PLN",
-									time: "45 min",
-								},
-								{
-									name: "COMBO + ODSIWIANIE",
-									price: "190 PLN",
-									time: "75 min",
-								},
-								{
-									name: "COMBO (WŁOSY + BRODA)",
-									price: "130 PLN",
+									price: "150 PLN",
 									time: "60 min",
 								},
 								{
-									name: "GŁOWA ZERO + BRODA",
-									price: "100 PLN",
-									time: "30 min",
+									name: "COMBO + ODSIWIANIE",
+									price: "220 PLN",
+									time: "90 min",
 								},
-								{ name: "MYCIE WŁOSÓW", price: "10 PLN", time: "15 min" },
+								{
+									name: "COMBO (WŁOSY + BRODA)",
+									price: "140 PLN",
+									time: "90 min",
+								},
+								{
+									name: "GŁOWA ZERO + BRODA",
+									price: "110 PLN",
+									time: "45 min",
+								},
+								{ name: "ODSIWIANIE WŁOSÓW", price: "80 PLN", time: "30 min" },
+								{ name: "PREMIUM BRODA", price: "130 PLN", time: "45 min" },
+								{ name: "PREMIUM COMBO", price: "220 PLN", time: "30 min" },
 							].map((item, index) => (
 								<div
 									key={index}
@@ -421,37 +429,39 @@ const HomePage = () => {
 							backgroundBlendMode: "multiply",
 						}}>
 						<motion.div
-							className='grid grid-cols-1 gap-2 w-full px-4 mb-[20px] z-10'
+							className='grid grid-cols-1 gap-2 w-full px-4 mb-[40px] z-10'
 							style={{ height: "85%" }}
 							initial='hidden'
 							whileInView='visible'
 							viewport={{ once: true }}
 							variants={fadeInFromLeft}>
 							{[
-								{ name: "STRZYŻENIE MĘSKIE", price: "80 PLN", time: "30 min" },
-								{ name: "WŁOSY + BRODA", price: "130 PLN", time: "60 min" },
-								{ name: "STRZYŻENIE BRODY", price: "60 PLN", time: "30 min" },
+								{ name: "STRZYŻENIE MĘSKIE", price: "85 PLN", time: "45 min" },
+								{ name: "WŁOSY + BRODA", price: "140 PLN", time: "60 min" },
+								{ name: "STRZYŻENIE BRODY", price: "75 PLN", time: "30 min" },
 								{
 									name: "BRODA + ODSIWIANIE",
-									price: "130 PLN",
-									time: "45 min",
-								},
-								{
-									name: "COMBO + ODSIWIANIE",
-									price: "190 PLN",
-									time: "75 min",
-								},
-								{
-									name: "COMBO (WŁOSY + BRODA)",
-									price: "130 PLN",
+									price: "150 PLN",
 									time: "60 min",
 								},
 								{
-									name: "GŁOWA ZERO + BRODA",
-									price: "100 PLN",
-									time: "30 min",
+									name: "COMBO + ODSIWIANIE",
+									price: "220 PLN",
+									time: "90 min",
 								},
-								{ name: "MYCIE WŁOSÓW", price: "10 PLN", time: "15 min" },
+								{
+									name: "COMBO (WŁOSY + BRODA)",
+									price: "140 PLN",
+									time: "90 min",
+								},
+								{
+									name: "GŁOWA ZERO + BRODA",
+									price: "110 PLN",
+									time: "45 min",
+								},
+								{ name: "ODSIWIANIE WŁOSÓW", price: "80 PLN", time: "30 min" },
+								{ name: "PREMIUM BRODA", price: "130 PLN", time: "45 min" },
+								{ name: "PREMIUM COMBO", price: "220 PLN", time: "30 min" },
 							].map((item, index) => (
 								<div
 									key={index}
@@ -666,13 +676,19 @@ const HomePage = () => {
 					<div className='w-full'>
 						<Slider {...settings} className='space-x-4'>
 							{[
-								HaircutPhoto,
-								Haircut2,
-								Haircut3,
-								Haircut4,
-								Haircut5,
-								Haircut6,
-								Haircut7,
+								galeria1,
+								galeria2,
+								galeria3,
+								galeria4,
+								galeria5,
+								galeria6,
+								galeria7,
+								galeria8,
+								galeria9,
+								galeria10,
+								galeria11,
+								galeria12,
+								galeria13,
 							].map((photo, index) => (
 								<div key={index} className='p-3'>
 									<div className='p-2 border-[3px] border-prime rounded-md shadow-[0_0_7px_rgba(255,120,0,0.8),inset_0_0_7px_rgba(255,120,0,0.8)]'>
@@ -690,13 +706,19 @@ const HomePage = () => {
 					<div className='w-full mt-[-5px]'>
 						<Slider {...reverseSettings} className='space-x-4'>
 							{[
-								HaircutPhoto,
-								Haircut2,
-								Haircut3,
-								Haircut4,
-								Haircut5,
-								Haircut6,
-								Haircut7,
+								galeria1,
+								galeria2,
+								galeria3,
+								galeria4,
+								galeria5,
+								galeria6,
+								galeria7,
+								galeria8,
+								galeria9,
+								galeria10,
+								galeria11,
+								galeria12,
+								galeria13,
 							].map((photo, index) => (
 								<div key={index} className='p-3'>
 									<div className='p-2 border-[3px] border-prime rounded-md shadow-[0_0_7px_rgba(255,120,0,0.8),inset_0_0_7px_rgba(255,120,0,0.8)]'>

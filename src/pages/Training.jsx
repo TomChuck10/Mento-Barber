@@ -319,10 +319,15 @@ const Training = () => {
 								</p>
 								<hr className='border-[white] opacity-5 mt-[16px] mb-[24px]' />
 								<p>
-									<span className='font-bold'>Telefon: </span>+48 123 456 789
+									<span className='font-bold'>Telefon: </span>+48 798 144 399
 								</p>
 								<p>
-									<span className='font-bold'>Instagram: </span>@insta
+									<span className='font-bold'>Instagram: </span>
+									<a
+										href='https://www.instagram.com/mento.barbershop/'
+										target='_blank'>
+										mento.barbershop
+									</a>
 								</p>
 							</div>
 						</div>
@@ -443,10 +448,15 @@ const Training = () => {
 								</p>
 								<hr className='border-[white] opacity-5 mt-[16px] mb-[24px]' />
 								<p>
-									<span className='font-bold'>Telefon: </span>+48 123 456 789
+									<span className='font-bold'>Telefon: </span>+48 798 144 399
 								</p>
 								<p>
-									<span className='font-bold'>Instagram: </span>@insta
+									<span className='font-bold'>Instagram: </span>
+									<a
+										href='https://www.instagram.com/mento.barbershop/'
+										target='_blank'>
+										mento.barbershop
+									</a>
 								</p>
 							</div>
 						</div>
