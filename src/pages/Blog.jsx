@@ -208,62 +208,71 @@ const Blog = () => {
 				id='about'
 				className='relative flex flex-col justify-end items-center min-h-screen px-[16px] z-10 overflow-hidden'
 				style={{
-					background: `linear-gradient(90deg, #090909, #091E23), url(${content[currentIndex].image}), url(${Texture})`,
-					backgroundSize: "cover, cover",
-					backgroundRepeat: "no-repeat, repeat",
-					backgroundPosition: "center, center",
+					backgroundImage: `linear-gradient(90deg, rgba(9,9,9,0.7), rgba(9,30,35,0.7)), url(${content[currentIndex].image}), url(${Texture})`,
+					backgroundSize: "cover, cover, cover",
+					backgroundRepeat: "no-repeat, no-repeat, repeat",
+					backgroundPosition: "center, center, center",
 					backgroundBlendMode: "multiply",
-					opacity: 0.8, // Added opacity to make it more transparent
+					height: "100vh",
 				}}>
-				<div className='flex flex-row justify-between w-full items-end'>
-					<div className='flex flex-col items-start mt-[30%] leading-none max-w-screen-sm z-20'>
-						<div className='flex flex-col items-center space-y-3 mb-[19px]'>
-							{content.map((_, index) => (
+				<div className='z-20 flex flex-col w-full'>
+					{/* Navigation dots above title */}
+					<div className='flex flex-col items-center space-y-3 mt-[30px] mb-6 mr-auto'>
+						{content.map((_, index) => (
+							<div
+								key={index}
+								className={`${
+									index === currentIndex &&
+									"w-5 h-5 border-[1px] border-gray-500 rounded-full flex items-center justify-center"
+								}`}
+								onClick={() => setCurrentIndex(index)}
+								style={{ cursor: "pointer" }}>
 								<div
-									key={index}
-									className={`${
-										index === currentIndex &&
-										"w-5 h-5 border-[1px] border-gray-500 rounded-full flex items-center justify-center"
+									className={`rounded-full border-2 ${
+										index === currentIndex
+											? "bg-prime border-prime w-3 h-3 m-auto"
+											: "border-[#FFF8E7] w-5 h-5"
 									}`}
-									onClick={() => setCurrentIndex(index)} // Added click handler
-									style={{ cursor: "pointer" }} // Added pointer cursor for better UX
-								>
-									<div
-										className={`rounded-full border-2 ${
-											index === currentIndex
-												? "bg-orange-500 border-orange-500 w-3 h-3 m-auto"
-												: "border-[#FFF8E7] w-5 h-5"
-										}`}
-									/>
-								</div>
-							))}
+								/>
+							</div>
+						))}
+					</div>
+
+					{/* Content section */}
+					<div className='flex flex-row justify-between w-full items-end'>
+						<div className='flex flex-col items-start mt-auto leading-none max-w-screen-sm z-20'>
+							<h1 className='title text-[22px] text-prime font-bold'>
+								{content[currentIndex].title}
+							</h1>
+							<p
+								className='description text-[13px] mt-4 max-w-xl text-gray-300'
+								style={{ lineHeight: 2 }}>
+								{content[currentIndex].description}
+							</p>
+							<button
+								className='button p-[12px] border-2 w-full border-prime rounded-[16px] text-prime mb-[96px] mt-[24px]'
+								onClick={() => navigate(`/blog/${content[currentIndex].path}`)}>
+								Kliknij aby przeczytać
+							</button>
 						</div>
-						<h1 className='title text-[22px] text-prime font-bold leading-[1.5]'>
-							{content[currentIndex].title}
-						</h1>
-						<p
-							className='description text-[14px] mt-4 max-w-xl text-gray-300'
-							style={{ lineHeight: 2 }}>
-							{content[currentIndex].description}
-						</p>
-						<button
-							className='button p-[16px] border-2 w-full border-prime rounded-[16px] text-prime mb-[96px] mt-[24px]'
-							onClick={() => navigate(`/blog/${content[currentIndex].path}`)}>
-							Kliknij aby przeczytać
-						</button>
 					</div>
 				</div>
+
+				{/* Gradient overlay */}
 				<img
 					src={Gradient}
 					alt='Gradient'
-					className='absolute top-0 right-0 w-1/1 h-auto pointer-events-none z-10'
-					style={{ top: -700, right: -650 }}
+					className='absolute top-0 right-0 pointer-events-none z-20'
+					style={{ top: -350, opacity: 0.5, width: "250%", height: "auto" }}
 				/>
+
+				{/* Bottom gradient */}
 				<div
 					className='absolute bottom-0 left-0 w-full h-[30%] pointer-events-none z-10'
 					style={{
 						background:
 							"linear-gradient(180deg, #0B0C0F00 0%, #0B0C0F80 24%, #0B0C0FBF 35%, #0B0C0F 100%)",
+						opacity: 0.5,
 					}}></div>
 			</div>
 		</div>

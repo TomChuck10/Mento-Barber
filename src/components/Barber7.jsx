@@ -104,18 +104,13 @@ const Barber7 = ({ slideInFromRight, fadeInFromLeft }) => {
 							}}>
 							GABI
 						</h1>
-						<p className='mt-4 max-w-[430px] text-[18px] font-light text-white text-center'>
+						<p className='mt-4 mb-20 max-w-[430px] text-[18px] font-light text-white text-center'>
 							Lubię pracować nad fryzurami modernistycznymi, z teksturą, tak by
 							finalny efekt wyglądał świeżo i ciekawie. Tak by fryzura mogła
 							wyglądać dobrze z układaniem jak i bez. Bardzo dobrze czuję się
 							przy fryzurach typu french crop, ale klasykę w postaci side part
 							również często i chętnie ścinam.
 						</p>
-						<div className='flex flex-col items-center space-y-[12px] w-full'>
-							<button className='button p-[16px] border-2 w-full border-prime rounded-[16px] text-prime mb-[24px] mt-[24px]'>
-								Umów wizytę
-							</button>
-						</div>
 					</div>
 					<img
 						src={Barber}

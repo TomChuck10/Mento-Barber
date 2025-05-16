@@ -105,18 +105,13 @@ const Barber6 = ({ slideInFromRight, fadeInFromLeft }) => {
 							}}>
 							JULIA
 						</h1>
-						<p className='mt-4 max-w-[430px] text-[18px] font-light text-white text-center'>
+						<p className='mt-4 mb-20 max-w-[430px] text-[18px] font-light text-white text-center'>
 							Bardzo dobrze czuje sie w długich formach, pozwalaja na kreatywne
 							stylizacje, wymagające precyzyjnego cięcia i dopasowania do
 							indywidualnych potrzeb klienta. Uwielbiam tworzyc efekt
 							&quot;messy look&quot;, który nadaje strzyżeniu swobody i
 							naturalności.
 						</p>
-						<div className='flex flex-col items-center space-y-[12px] w-full'>
-							<button className='button p-[16px] border-2 w-full border-prime rounded-[16px] text-prime mb-[24px] mt-[24px]'>
-								Umów wizytę
-							</button>
-						</div>
 					</div>
 					<img
 						src={Barber}

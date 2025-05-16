@@ -588,7 +588,7 @@ const HomePage = () => {
 								}}>
 								JIMMY
 							</h1>
-							<p className='mt-4 max-w-[430px] text-[18px] font-light text-white text-center'>
+							<p className='mt-4 mb-20 max-w-[430px] text-[18px] font-light text-white text-center'>
 								Profesjonalizm to dla mnie podstawa – zawsze staram się zapewnić
 								najwyższą jakość usług, dzieląc się swoją wiedzą o pielęgnacji i
 								stylizacji. Choć kocham klasyczne cięcia, z radością
@@ -596,11 +596,6 @@ const HomePage = () => {
 								tylko precyzyjne cięcie, ale także dobra zabawa i pozytywna
 								atmosfera, którą stwarzam wokół siebie.
 							</p>
-							<div className='flex flex-col items-center space-y-[12px] w-full'>
-								<button className='button p-[16px] border-2 w-full border-prime rounded-[16px] text-prime mb-[24px] mt-[24px]'>
-									Umów wizytę
-								</button>
-							</div>
 						</div>
 						<motion.img
 							src={PhotoJimmy}

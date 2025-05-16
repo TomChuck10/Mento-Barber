@@ -104,17 +104,12 @@ const Barber5 = ({ slideInFromRight, fadeInFromLeft }) => {
 							}}>
 							OLA
 						</h1>
-						<p className='mt-4 max-w-[430px] text-[18px] font-light text-white text-center'>
+						<p className='mt-4 mb-20 max-w-[430px] text-[18px] font-light text-white text-center'>
 							Specjalizuję się w strzyżeniach męskich, a cieniowanie od zera to
 							moja ulubiona technika. Cenię dobrą rozmowę i świetny kontakt z
 							klientami, bo barbering to dla mnie nie tylko praca, ale też
 							pasja. Zawsze pełna energii i uśmiechu - zapraszam na fotel!
 						</p>
-						<div className='flex flex-col items-center space-y-[12px] w-full'>
-							<button className='button p-[16px] border-2 w-full border-prime rounded-[16px] text-prime mb-[24px] mt-[24px]'>
-								Umów wizytę
-							</button>
-						</div>
 					</div>
 					<img
 						src={Barber}
