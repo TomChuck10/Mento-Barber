@@ -250,7 +250,7 @@ const Blog = () => {
 								{content[currentIndex].description}
 							</p>
 							<button
-								className='button p-[12px] border-2 w-full border-prime rounded-[16px] text-prime mb-[60px] mt-[24px]'
+								className='button p-[12px] border-2 w-full border-prime rounded-[16px] text-prime mb-[30px] mt-[24px]'
 								onClick={() => navigate(`/blog/${content[currentIndex].path}`)}>
 								Kliknij aby przeczytać
 							</button>
