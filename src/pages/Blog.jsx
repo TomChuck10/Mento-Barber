@@ -217,7 +217,7 @@ const Blog = () => {
 				}}>
 				<div className='z-20 flex flex-col w-full'>
 					{/* Navigation dots above title */}
-					<div className='flex flex-col items-center space-y-3 mt-[30px] mb-6 mr-auto'>
+					<div className='flex flex-col items-center space-y-2 mb-6 mr-auto'>
 						{content.map((_, index) => (
 							<div
 								key={index}
@@ -250,7 +250,7 @@ const Blog = () => {
 								{content[currentIndex].description}
 							</p>
 							<button
-								className='button p-[12px] border-2 w-full border-prime rounded-[16px] text-prime mb-[96px] mt-[24px]'
+								className='button p-[12px] border-2 w-full border-prime rounded-[16px] text-prime mb-[60px] mt-[24px]'
 								onClick={() => navigate(`/blog/${content[currentIndex].path}`)}>
 								Kliknij aby przeczytać
 							</button>
