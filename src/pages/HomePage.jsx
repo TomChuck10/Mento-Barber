@@ -677,7 +677,7 @@ const HomePage = () => {
 					}
 				}}>
 				{" "}
-				<div className={`w-full ${isMobile ? "pt-[60px]" : "pt-[120px]"}`}>
+				<div className={`w-full ${isMobile ? "pt-[80px]" : "pt-[120px]"}`}>
 					<div className='w-full'>
 						<Slider {...settings} className='space-x-4'>
 							{[
@@ -701,7 +701,7 @@ const HomePage = () => {
 											src={photo}
 											alt='Haircut'
 											className='w-full h-full object-cover rounded-md'
-											style={{ height: isMobile ? "31vh" : "35vh" }}
+											style={{ height: isMobile ? "33vh" : "35vh" }}
 										/>
 									</div>
 								</div>
@@ -731,7 +731,7 @@ const HomePage = () => {
 											src={photo}
 											alt='Haircut'
 											className='w-full h-full object-cover rounded-md'
-											style={{ height: isMobile ? "31vh" : "35vh" }}
+											style={{ height: isMobile ? "33vh" : "35vh" }}
 										/>
 									</div>
 								</div>
