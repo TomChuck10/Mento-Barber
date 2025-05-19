@@ -651,7 +651,7 @@ const HomePage = () => {
 					fadeInFromLeft={fadeInFromLeft}
 				/>
 			</div>
-			{/* Czwarty ekran - nasze prace */}
+			{/* Czwarty ekran - nasze prace */}{" "}
 			<div
 				id='works'
 				className='relative h-screen flex items-center justify-center text-white snap-start overflow-hidden z-10'
@@ -661,6 +661,10 @@ const HomePage = () => {
 					backgroundRepeat: "no-repeat",
 					backgroundPosition: "center",
 					backgroundBlendMode: "multiply",
+					paddingTop: "env(safe-area-inset-top)",
+					paddingBottom: "env(safe-area-inset-bottom)",
+					paddingLeft: "env(safe-area-inset-left)",
+					paddingRight: "env(safe-area-inset-right)",
 				}}
 				onWheel={e => {
 					if (e.deltaY > 0) {
@@ -669,7 +673,11 @@ const HomePage = () => {
 							?.scrollIntoView({ behavior: "smooth" });
 					}
 				}}>
-				<div className='w-full pt-[120px]'>
+				<div
+					className='w-full'
+					style={{
+						paddingTop: "max(120px, calc(120px + env(safe-area-inset-top)))",
+					}}>
 					<div className='w-full'>
 						<Slider {...settings} className='space-x-4'>
 							{[
