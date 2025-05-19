@@ -422,7 +422,7 @@ const HomePage = () => {
 				<Section index={2}>
 					<div
 						id='pricing'
-						className='relative h-[100svh] flex flex-col items-center justify-end pt-[40px] text-prime snap-start overflow-hidden'
+						className='relative h-[100dvh] flex flex-col items-center justify-end pt-[20px] text-prime snap-start overflow-hidden'
 						style={{
 							background: `linear-gradient(90deg, #091E23, #090909), url(${Texture})`,
 							backgroundSize: "cover",
@@ -432,7 +432,7 @@ const HomePage = () => {
 						}}>
 						<motion.div
 							className='grid grid-cols-1 gap-2 w-full px-4 mb-[40px] z-10'
-							style={{ maxHeight: "85dvh" }}
+							style={{ height: "80dvh" }}
 							initial='hidden'
 							whileInView='visible'
 							viewport={{ once: true }}
