@@ -708,7 +708,7 @@ const HomePage = () => {
 							))}
 						</Slider>
 					</div>
-					<div className={`w-full ${isMobile ? "mt-[5px]" : "mt-[-5px]"}`}>
+					<div className={`w-full ${isMobile ? "mt-[15px]" : "mt-[-5px]"}`}>
 						<Slider {...reverseSettings} className='space-x-4'>
 							{[
 								galeria1,
@@ -731,7 +731,7 @@ const HomePage = () => {
 											src={photo}
 											alt='Haircut'
 											className='w-full h-full object-cover rounded-md'
-											style={{ height: isMobile ? "33vh" : "35vh" }}
+											style={{ height: isMobile ? "32vh" : "35vh" }}
 										/>
 									</div>
 								</div>
