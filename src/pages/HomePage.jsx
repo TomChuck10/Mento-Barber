@@ -432,7 +432,10 @@ const HomePage = () => {
 						}}>
 						<motion.div
 							className='grid grid-cols-1 gap-2 w-full px-4 mb-[40px] z-10'
-							style={{ height: "80dvh" }}
+							style={{
+								height: "80dvh",
+								paddingBottom: "max(1.25rem, env(safe-area-inset-bottom))",
+							}}
 							initial='hidden'
 							whileInView='visible'
 							viewport={{ once: true }}
