@@ -422,7 +422,7 @@ const HomePage = () => {
 				<Section index={2}>
 					<div
 						id='pricing'
-						className='relative h-[100dvh] flex flex-col items-center justify-end pt-[20px] text-prime snap-start overflow-hidden'
+						className='relative h-[100dvh] flex flex-col items-center justify-end pt-[40px] text-prime snap-start overflow-hidden'
 						style={{
 							background: `linear-gradient(90deg, #091E23, #090909), url(${Texture})`,
 							backgroundSize: "cover",
