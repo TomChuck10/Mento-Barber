@@ -56,7 +56,7 @@ const Navbar = () => {
 			<div className='flex justify-between items-center'>
 				{/* Logo */}
 				<div className='md:absolute md:left-1/2 md:transform md:-translate-x-1/2 z-20'>
-					<a href='#about'>
+					<a href='/#about'>
 						<img
 							src={Logo}
 							alt='Logo'

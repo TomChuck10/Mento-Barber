@@ -202,21 +202,23 @@ const Blog = () => {
 			className='h-[100dvh] overflow-hidden'
 			onTouchStart={handleTouchStart}
 			onTouchMove={handleTouchMove}>
-			{/* Mobile View */}
 			<Navbar />
+
 			<div
 				id='about'
-				className='relative flex flex-col justify-end items-center min-h-[100dvh] px-[16px] z-10 overflow-hidden'
+				className='relative flex flex-col justify-end items-center px-[16px] z-10 overflow-hidden'
 				style={{
+					minHeight: "100dvh", // uwzględnia paski Safari
+					height: "100dvh", // fallback dla starszych przeglądarek
 					backgroundImage: `linear-gradient(90deg, rgba(9,9,9,0.7), rgba(9,30,35,0.7)), url(${content[currentIndex].image}), url(${Texture})`,
 					backgroundSize: "cover, cover, cover",
 					backgroundRepeat: "no-repeat, no-repeat, repeat",
 					backgroundPosition: "center, center, center",
 					backgroundBlendMode: "multiply",
-					height: "100vh",
 				}}>
+				{/* CONTENT */}
 				<div className='z-20 flex flex-col w-full'>
-					{/* Navigation dots above title */}
+					{/* Nawigacja (kropki) */}
 					<div className='flex flex-col items-center space-y-2 mb-6 mr-auto'>
 						{content.map((_, index) => (
 							<div
@@ -238,7 +240,7 @@ const Blog = () => {
 						))}
 					</div>
 
-					{/* Content section */}
+					{/* Sekcja tekstowa */}
 					<div className='flex flex-row justify-between w-full items-end'>
 						<div className='flex flex-col items-start mt-auto leading-none max-w-screen-sm z-20'>
 							<h1 className='title text-[22px] text-prime font-bold'>
@@ -258,7 +260,7 @@ const Blog = () => {
 					</div>
 				</div>
 
-				{/* Gradient overlay */}
+				{/* Nakładka górna (gradient) */}
 				<img
 					src={Gradient}
 					alt='Gradient'
@@ -266,7 +268,7 @@ const Blog = () => {
 					style={{ top: -350, opacity: 0.5, width: "250%", height: "auto" }}
 				/>
 
-				{/* Bottom gradient */}
+				{/* Gradient dolny */}
 				<div
 					className='absolute bottom-0 left-0 w-full h-[30%] pointer-events-none z-10'
 					style={{
