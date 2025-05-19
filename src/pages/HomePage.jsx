@@ -425,7 +425,7 @@ const HomePage = () => {
 						className='relative flex flex-col justify-end px-6 pb-5 snap-start z-10 overflow-hidden'
 						style={{
 							minHeight: "100svh",
-							paddingBottom: "max(1.25rem, env(safe-area-inset-bottom))",
+							// paddingBottom: "max(1.25rem, env(safe-area-inset-bottom))",
 							background: `linear-gradient(90deg, #090909, #091E23), url(${Texture})`,
 							backgroundSize: "cover",
 							backgroundRepeat: "no-repeat",
