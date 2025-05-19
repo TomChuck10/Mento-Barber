@@ -199,25 +199,21 @@ const Blog = () => {
 		</div>
 	) : (
 		<div
-			className='h-screen overflow-hidden safe-area-inset'
+			className='h-[100dvh] overflow-hidden'
 			onTouchStart={handleTouchStart}
 			onTouchMove={handleTouchMove}>
 			{/* Mobile View */}
 			<Navbar />
 			<div
 				id='about'
-				className='relative flex flex-col justify-end items-center min-h-screen px-[16px] z-10 overflow-hidden'
+				className='relative flex flex-col justify-end items-center min-h-[85vh] px-[16px] z-10 overflow-hidden'
 				style={{
 					backgroundImage: `linear-gradient(90deg, rgba(9,9,9,0.7), rgba(9,30,35,0.7)), url(${content[currentIndex].image}), url(${Texture})`,
 					backgroundSize: "cover, cover, cover",
 					backgroundRepeat: "no-repeat, no-repeat, repeat",
 					backgroundPosition: "center, center, center",
 					backgroundBlendMode: "multiply",
-					height: "100dvh", // Używa dynamic viewport height zamiast vh
-					paddingTop: "env(safe-area-inset-top)",
-					paddingBottom: "env(safe-area-inset-bottom)",
-					paddingLeft: "env(safe-area-inset-left)",
-					paddingRight: "env(safe-area-inset-right)",
+					height: "100vh",
 				}}>
 				<div className='z-20 flex flex-col w-full'>
 					{/* Navigation dots above title */}
@@ -252,9 +248,9 @@ const Blog = () => {
 								className='description text-[13px] mt-4 max-w-xl text-gray-300'
 								style={{ lineHeight: 2 }}>
 								{content[currentIndex].description}
-							</p>{" "}
+							</p>
 							<button
-								className='button p-[12px] border-2 w-full border-prime rounded-[16px] text-prime mb-[calc(30px+env(safe-area-inset-bottom))] mt-[24px]'
+								className='button p-[12px] border-2 w-full border-prime rounded-[16px] text-prime mb-[30px] mt-[24px]'
 								onClick={() => navigate(`/blog/${content[currentIndex].path}`)}>
 								Kliknij aby przeczytać
 							</button>
