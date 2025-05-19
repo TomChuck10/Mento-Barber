@@ -232,7 +232,7 @@ const HomePage = () => {
 				<Section index={1}>
 					<div
 						id='about'
-						className='relative flex flex-col justify-end min-h-screen px-6 pb-5 snap-start z-10 overflow-hidden'
+						className='relative flex flex-col justify-end min-h-screen px-6 pb-5 snap-start z-10 overflow-hidden h-[100dvh]'
 						style={{
 							background: `linear-gradient(90deg, #090909, #091E23), url(${Texture})`,
 							backgroundSize: "cover",
