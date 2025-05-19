@@ -199,7 +199,7 @@ const Blog = () => {
 		</div>
 	) : (
 		<div
-			className='h-screen overflow-hidden'
+			className='h-screen overflow-hidden safe-area-inset'
 			onTouchStart={handleTouchStart}
 			onTouchMove={handleTouchMove}>
 			{/* Mobile View */}
@@ -213,7 +213,11 @@ const Blog = () => {
 					backgroundRepeat: "no-repeat, no-repeat, repeat",
 					backgroundPosition: "center, center, center",
 					backgroundBlendMode: "multiply",
-					height: "100vh",
+					height: "100dvh", // Używa dynamic viewport height zamiast vh
+					paddingTop: "env(safe-area-inset-top)",
+					paddingBottom: "env(safe-area-inset-bottom)",
+					paddingLeft: "env(safe-area-inset-left)",
+					paddingRight: "env(safe-area-inset-right)",
 				}}>
 				<div className='z-20 flex flex-col w-full'>
 					{/* Navigation dots above title */}
@@ -248,9 +252,9 @@ const Blog = () => {
 								className='description text-[13px] mt-4 max-w-xl text-gray-300'
 								style={{ lineHeight: 2 }}>
 								{content[currentIndex].description}
-							</p>
+							</p>{" "}
 							<button
-								className='button p-[12px] border-2 w-full border-prime rounded-[16px] text-prime mb-[30px] mt-[24px]'
+								className='button p-[12px] border-2 w-full border-prime rounded-[16px] text-prime mb-[calc(30px+env(safe-area-inset-bottom))] mt-[24px]'
 								onClick={() => navigate(`/blog/${content[currentIndex].path}`)}>
 								Kliknij aby przeczytać
 							</button>
