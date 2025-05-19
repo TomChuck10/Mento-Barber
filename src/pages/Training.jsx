@@ -133,7 +133,7 @@ const Training = () => {
 		},
 		{
 			photo: Beard,
-			title: "Krótkie włosy , praca nmaszynką",
+			title: "Brody krótke i długie",
 			description:
 				"Idealnie przycięta broda to nie tylko estetyka, ale i komfort klienta. W tym panelu nauczysz się cieniowania brody, jej konturowania i odpowiedniego skracania, by dopasować kształt do rysów twarzy. Skupimy się także na tonowaniu i pielęgnacji zarostu, aby uzyskać naturalny, zdrowy wygląd. Podczas praktycznej części dowiesz się, jak pracować maszynka , trymerem, brzytwą i nożyczkami, by broda wyglądała perfekcyjnie i była dopasowana do stylu klienta.",
 			tutorial: "BRODY: CIENIOWANIE • MODELOWANIE • TONOWANIE - PLAN DNIA",
