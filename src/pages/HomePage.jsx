@@ -285,13 +285,11 @@ const HomePage = () => {
 									fontWeight: "bold",
 									textTransform: "uppercase",
 									color: "transparent",
-									WebkitTextStroke: "2px #ff6600",
+									WebkitTextStrokeWidth: "2px",
+									WebkitTextStrokeColor: "#ff6600",
+									WebkitTextFillColor: "transparent",
 									textShadow:
 										"0 0 0px #0B0C0F, 0 0 0px #0B0C0F, 0 0 10px #E67543",
-
-									WebkitFontSmoothing: "antialiased",
-									WebkitBackgroundClip: "text",
-									transform: "translateZ(0)",
 								}}>
 								bochnia
 							</h1>
