@@ -650,13 +650,19 @@ const HomePage = () => {
 					slideInFromRight={slideInFromRight}
 					fadeInFromLeft={fadeInFromLeft}
 				/>
-			</div>
+			</div>{" "}
 			{/* Czwarty ekran - nasze prace */}
 			<div
 				id='works'
 				className='relative h-screen flex items-center justify-center text-white snap-start overflow-hidden z-10'
 				style={{
-					paddingBottom: "7.5rem",
+					...(isMobile
+						? {
+								minHeight: "100svh",
+								height: "100svh",
+								paddingBottom: "max(1.25rem, env(safe-area-inset-bottom))",
+						  }
+						: {}),
 					background: `linear-gradient(90deg, #090909, #091E23), url(${Texture})`,
 					backgroundSize: "cover",
 					backgroundRepeat: "no-repeat",
@@ -670,7 +676,8 @@ const HomePage = () => {
 							?.scrollIntoView({ behavior: "smooth" });
 					}
 				}}>
-				<div className='w-full pt-[120px]'>
+				{" "}
+				<div className={`w-full ${isMobile ? "pt-[60px]" : "pt-[120px]"}`}>
 					<div className='w-full'>
 						<Slider {...settings} className='space-x-4'>
 							{[
@@ -694,14 +701,14 @@ const HomePage = () => {
 											src={photo}
 											alt='Haircut'
 											className='w-full h-full object-cover rounded-md'
-											style={{ height: "35vh" }}
+											style={{ height: isMobile ? "25vh" : "35vh" }}
 										/>
 									</div>
 								</div>
 							))}
 						</Slider>
 					</div>
-					<div className='w-full mt-[-5px]'>
+					<div className={`w-full ${isMobile ? "mt-[5px]" : "mt-[-5px]"}`}>
 						<Slider {...reverseSettings} className='space-x-4'>
 							{[
 								galeria1,
@@ -724,17 +731,17 @@ const HomePage = () => {
 											src={photo}
 											alt='Haircut'
 											className='w-full h-full object-cover rounded-md'
-											style={{ height: "35vh" }}
+											style={{ height: isMobile ? "25vh" : "35vh" }}
 										/>
 									</div>
 								</div>
 							))}
-						</Slider>
+						</Slider>{" "}
 						<img
 							src={Gradient}
 							alt='Gradient'
 							className='absolute w-1/1 h-auto pointer-events-none z-0 opacity-70'
-							style={{ top: "-50%" }}
+							style={{ top: isMobile ? "-30%" : "-50%" }}
 						/>
 					</div>
 				</div>
