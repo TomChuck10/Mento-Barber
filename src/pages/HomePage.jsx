@@ -677,7 +677,7 @@ const HomePage = () => {
 					}
 				}}>
 				{" "}
-				<div className={`w-full ${isMobile ? "pt-[80px]" : "pt-[120px]"}`}>
+				<div className={`w-full ${isMobile ? "pt-[100px]" : "pt-[120px]"}`}>
 					<div className='w-full'>
 						<Slider {...settings} className='space-x-4'>
 							{[
