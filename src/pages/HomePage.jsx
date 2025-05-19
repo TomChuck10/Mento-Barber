@@ -701,7 +701,7 @@ const HomePage = () => {
 											src={photo}
 											alt='Haircut'
 											className='w-full h-full object-cover rounded-md'
-											style={{ height: isMobile ? "25vh" : "35vh" }}
+											style={{ height: isMobile ? "30vh" : "35vh" }}
 										/>
 									</div>
 								</div>
