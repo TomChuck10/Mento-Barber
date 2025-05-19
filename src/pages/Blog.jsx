@@ -206,7 +206,7 @@ const Blog = () => {
 			<Navbar />
 			<div
 				id='about'
-				className='relative flex flex-col justify-end items-center min-h-[85vh] px-[16px] z-10 overflow-hidden'
+				className='relative flex flex-col justify-end items-center min-h-[100dvh] px-[16px] z-10 overflow-hidden'
 				style={{
 					backgroundImage: `linear-gradient(90deg, rgba(9,9,9,0.7), rgba(9,30,35,0.7)), url(${content[currentIndex].image}), url(${Texture})`,
 					backgroundSize: "cover, cover, cover",
