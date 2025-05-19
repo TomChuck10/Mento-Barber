@@ -99,7 +99,7 @@ const HomePage = () => {
 		return (
 			<motion.div
 				key={index}
-				className='section h-[100dvh]'
+				className='section'
 				initial='hidden'
 				whileInView='visible'
 				viewport={{ once: true, amount: 0.3 }}
@@ -229,11 +229,13 @@ const HomePage = () => {
 					</div>
 				</Section>
 			) : (
-				<Section index={1} className='h-[100dvh]'>
+				<Section index={1}>
 					<div
 						id='about'
-						className='relative flex flex-col justify-end min-h-screen px-6 pb-5 snap-start z-10 overflow-hidden'
+						className='relative flex flex-col justify-end px-6 pb-5 snap-start z-10 overflow-hidden'
 						style={{
+							minHeight: "100svh",
+							paddingBottom: "max(1.25rem, env(safe-area-inset-bottom))",
 							background: `linear-gradient(90deg, #090909, #091E23), url(${Texture})`,
 							backgroundSize: "cover",
 							backgroundRepeat: "no-repeat",
