@@ -672,7 +672,7 @@ const HomePage = () => {
 				<div
 					className='w-full'
 					style={{
-						paddingTop: isMobile ? "60px" : "120px",
+						paddingTop: isMobile && "120px",
 					}}>
 					<div className='w-full'>
 						<Slider {...settings} className='space-x-4'>
