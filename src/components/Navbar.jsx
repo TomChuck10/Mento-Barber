@@ -56,13 +56,13 @@ const Navbar = () => {
 			<div className='flex justify-between items-center'>
 				{/* Logo */}
 				<div className='md:absolute md:left-1/2 md:transform md:-translate-x-1/2 z-20'>
-					<Link to='/'>
+					<a href='/#about'>
 						<img
 							src={Logo}
 							alt='Logo'
 							className='logo cursor-pointer h-[60px] md:h-[80px] md:mt-[-20px]'
 						/>
-					</Link>
+					</a>
 				</div>
 
 				{/* Desktop Links */}
