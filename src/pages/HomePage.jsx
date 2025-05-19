@@ -281,21 +281,16 @@ const HomePage = () => {
 							<h1
 								className='uppercase font-bold text-center'
 								style={{
-									fontSize: "clamp(2rem, 10vw, 5rem)",
+									fontSize: "5rem",
 									fontWeight: "bold",
 									textTransform: "uppercase",
 									color: "transparent",
-									WebkitTextFillColor: "transparent",
-									WebkitTextStrokeWidth: "2px",
-									WebkitTextStrokeColor: "#ff6600",
+									WebkitTextStroke: "2px #ff6600",
 									textShadow:
 										"0 0 0px #0B0C0F, 0 0 0px #0B0C0F, 0 0 10px #E67543",
-									willChange: "transform",
-									transform: "translateZ(0)",
 								}}>
 								bochnia
 							</h1>
-
 							<p
 								className='text-center text-[14px] text-gray-300 mb-[48px]'
 								style={{ lineHeight: 2 }}>
