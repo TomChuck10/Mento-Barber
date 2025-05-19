@@ -654,9 +654,8 @@ const HomePage = () => {
 			{/* Czwarty ekran - nasze prace */}
 			<div
 				id='works'
-				className='relative h-screen flex items-center justify-center text-white snap-start overflow-hidden z-10'
+				className='relative min-h-[100svh] flex items-center justify-center text-white snap-start overflow-hidden z-10'
 				style={{
-					minHeight: "100svh",
 					background: `linear-gradient(90deg, #090909, #091E23), url(${Texture})`,
 					backgroundSize: "cover",
 					backgroundRepeat: "no-repeat",
