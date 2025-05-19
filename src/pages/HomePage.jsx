@@ -421,12 +421,10 @@ const HomePage = () => {
 			) : (
 				<Section index={2}>
 					<div
-						id='about'
-						className='relative flex flex-col justify-end px-6 pb-5 snap-start z-10 overflow-hidden'
+						id='pricing'
+						className='relative h-[100dvh] flex flex-col items-center justify-end pt-[20px] text-prime snap-start overflow-hidden'
 						style={{
-							minHeight: "100svh",
-							paddingBottom: "max(1rem, env(safe-area-inset-bottom))",
-							background: `linear-gradient(90deg, #090909, #091E23), url(${Texture})`,
+							background: `linear-gradient(90deg, #091E23, #090909), url(${Texture})`,
 							backgroundSize: "cover",
 							backgroundRepeat: "no-repeat",
 							backgroundPosition: "center",
@@ -434,7 +432,7 @@ const HomePage = () => {
 						}}>
 						<motion.div
 							className='grid grid-cols-1 gap-2 w-full px-4 mb-[40px] z-10'
-							style={{ height: "85%" }}
+							style={{ height: "85dvh" }}
 							initial='hidden'
 							whileInView='visible'
 							viewport={{ once: true }}
