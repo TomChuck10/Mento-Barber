@@ -379,7 +379,7 @@ const HomePage = () => {
 								},
 								{ name: "ODSIWIANIE WŁOSÓW", price: "80 PLN", time: "30 min" },
 								{ name: "PREMIUM BRODA", price: "130 PLN", time: "45 min" },
-								{ name: "PREMIUM COMBO", price: "220 PLN", time: "30 min" },
+								{ name: "PREMIUM COMBO", price: "220 PLN", time: "90 min" },
 							].map((item, index) => (
 								<div
 									key={index}
@@ -463,7 +463,7 @@ const HomePage = () => {
 								},
 								{ name: "ODSIWIANIE WŁOSÓW", price: "80 PLN", time: "30 min" },
 								{ name: "PREMIUM BRODA", price: "130 PLN", time: "45 min" },
-								{ name: "PREMIUM COMBO", price: "220 PLN", time: "30 min" },
+								{ name: "PREMIUM COMBO", price: "220 PLN", time: "90 min" },
 							].map((item, index) => (
 								<div
 									key={index}
@@ -654,8 +654,9 @@ const HomePage = () => {
 			{/* Czwarty ekran - nasze prace */}
 			<div
 				id='works'
-				className='relative h-screen flex items-center justify-center text-white snap-start overflow-hidden z-10'
+				className='relative flex items-center justify-center text-white snap-start overflow-hidden z-10'
 				style={{
+					height: "100dvh",
 					background: `linear-gradient(90deg, #090909, #091E23), url(${Texture})`,
 					backgroundSize: "cover",
 					backgroundRepeat: "no-repeat",
@@ -669,11 +670,7 @@ const HomePage = () => {
 							?.scrollIntoView({ behavior: "smooth" });
 					}
 				}}>
-				<div
-					className='w-full'
-					style={{
-						paddingTop: isMobile && "120px",
-					}}>
+				<div className='w-full pt-[120px]'>
 					<div className='w-full'>
 						<Slider {...settings} className='space-x-4'>
 							{[
