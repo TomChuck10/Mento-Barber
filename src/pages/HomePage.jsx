@@ -424,6 +424,8 @@ const HomePage = () => {
 						id='pricing'
 						className='relative h-screen flex flex-col items-center justify-end pt-[20px] text-prime snap-start overflow-hidden'
 						style={{
+							minHeight: "100svh",
+							paddingBottom: "max(1.25rem, env(safe-area-inset-bottom))",
 							background: `linear-gradient(90deg, #091E23, #090909), url(${Texture})`,
 							backgroundSize: "cover",
 							backgroundRepeat: "no-repeat",
@@ -571,6 +573,8 @@ const HomePage = () => {
 						id='barbers'
 						className='relative flex flex-col justify-end min-h-screen px-6 pb-5 snap-start z-10 overflow-hidden'
 						style={{
+							minHeight: "100svh",
+							paddingBottom: "max(1.25rem, env(safe-area-inset-bottom))",
 							background: `linear-gradient(90deg, #090909, #091E23), url(${Texture})`,
 							backgroundSize: "cover",
 							backgroundRepeat: "no-repeat",
@@ -656,6 +660,8 @@ const HomePage = () => {
 				id='works'
 				className='relative h-screen flex items-center justify-center text-white snap-start overflow-hidden z-10'
 				style={{
+					minHeight: "100svh",
+					paddingBottom: "max(1.25rem, env(safe-area-inset-bottom))",
 					background: `linear-gradient(90deg, #090909, #091E23), url(${Texture})`,
 					backgroundSize: "cover",
 					backgroundRepeat: "no-repeat",
