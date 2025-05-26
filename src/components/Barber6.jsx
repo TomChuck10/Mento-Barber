@@ -105,7 +105,7 @@ const Barber6 = ({ slideInFromRight, fadeInFromLeft }) => {
 							}}>
 							JULIA
 						</h1>
-						<p className='mt-4 mb-20 max-w-[430px] text-[18px] font-light text-white text-center'>
+						<p className='mt-4 mb-20 max-w-[430px] text-[14px] font-light text-white text-center'>
 							Bardzo dobrze czuje sie w długich formach, pozwalaja na kreatywne
 							stylizacje, wymagające precyzyjnego cięcia i dopasowania do
 							indywidualnych potrzeb klienta. Uwielbiam tworzyc efekt
@@ -117,7 +117,7 @@ const Barber6 = ({ slideInFromRight, fadeInFromLeft }) => {
 						src={Barber}
 						alt='Background'
 						className='absolute top-0 w-[700px] max-w-none z-10' // Added maxWidth constraint
-						style={{ right: "-125px", top: "-100px" }}
+						style={{ right: "-125px", top: "-150px" }}
 					/>
 					<img
 						src={Gradient}

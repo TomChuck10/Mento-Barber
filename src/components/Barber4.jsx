@@ -104,7 +104,7 @@ const Barber4 = ({ slideInFromRight, fadeInFromLeft }) => {
 							}}>
 							ANNA
 						</h1>
-						<p className='mt-4 mb-20 max-w-[430px] text-[18px] font-light text-white text-center'>
+						<p className='mt-4 mb-20 max-w-[430px] text-[14px] font-light text-white text-center'>
 							Uwielbiam klasyczne strzyżenia, które łączą elegancję z
 							nowoczesnym stylem. Stale rozwijam się, biorąc udział w zawodach,
 							a energia do pracy płynie od ludzi, którzy mnie otaczają. Jeśli
@@ -115,7 +115,7 @@ const Barber4 = ({ slideInFromRight, fadeInFromLeft }) => {
 						src={Barber}
 						alt='Background'
 						className='absolute top-0 w-[700px] max-w-none z-10' // Added maxWidth constraint
-						style={{ right: "-125px", top: "-100px" }}
+						style={{ right: "-150px", top: "-150px" }}
 					/>
 					<img
 						src={Gradient}

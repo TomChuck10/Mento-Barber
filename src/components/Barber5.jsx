@@ -104,7 +104,7 @@ const Barber5 = ({ slideInFromRight, fadeInFromLeft }) => {
 							}}>
 							OLA
 						</h1>
-						<p className='mt-4 mb-20 max-w-[430px] text-[18px] font-light text-white text-center'>
+						<p className='mt-4 mb-20 max-w-[430px] text-[14px] font-light text-white text-center'>
 							Specjalizuję się w strzyżeniach męskich, a cieniowanie od zera to
 							moja ulubiona technika. Cenię dobrą rozmowę i świetny kontakt z
 							klientami, bo barbering to dla mnie nie tylko praca, ale też
@@ -115,7 +115,7 @@ const Barber5 = ({ slideInFromRight, fadeInFromLeft }) => {
 						src={Barber}
 						alt='Background'
 						className='absolute top-0 w-[1000px] max-w-none z-10' // Added maxWidth constraint
-						style={{ right: "-225px", top: "-350px" }}
+						style={{ right: "-250px", top: "-400px" }}
 					/>
 					<img
 						src={Gradient}

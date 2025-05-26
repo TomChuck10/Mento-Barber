@@ -104,7 +104,7 @@ const Barber7 = ({ slideInFromRight, fadeInFromLeft }) => {
 							}}>
 							GABI
 						</h1>
-						<p className='mt-4 mb-20 max-w-[430px] text-[18px] font-light text-white text-center'>
+						<p className='mt-4 mb-20 max-w-[430px] text-[14px] font-light text-white text-center'>
 							Lubię pracować nad fryzurami modernistycznymi, z teksturą, tak by
 							finalny efekt wyglądał świeżo i ciekawie. Tak by fryzura mogła
 							wyglądać dobrze z układaniem jak i bez. Bardzo dobrze czuję się
@@ -116,7 +116,7 @@ const Barber7 = ({ slideInFromRight, fadeInFromLeft }) => {
 						src={Barber}
 						alt='Background'
 						className='absolute top-0 w-[700px] max-w-none z-10' // Added maxWidth constraint
-						style={{ right: "-125px", top: "-100px" }}
+						style={{ right: "-125px", top: "-225px" }}
 					/>
 					<img
 						src={Gradient}
