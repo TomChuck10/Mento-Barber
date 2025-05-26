@@ -1,4 +1,5 @@
-// import { useEffect, useState, useCallback } from "react";
+/* eslint-disable react-hooks/rules-of-hooks */
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion"; // Import framer-motion
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -45,6 +46,29 @@ import Texture from "../assets/texture.png";
 
 const HomePage = () => {
 	const isMobile = useIsMobile();
+
+	const useWindowSize = () => {
+		const [windowSize, setWindowSize] = useState({
+			width: undefined,
+			height: undefined,
+		});
+
+		useEffect(() => {
+			function handleResize() {
+				setWindowSize({
+					width: window.innerWidth,
+					height: window.innerHeight,
+				});
+			}
+
+			window.addEventListener("resize", handleResize);
+
+			handleResize();
+
+			return () => window.removeEventListener("resize", handleResize);
+		}, []);
+		return windowSize;
+	};
 
 	const settings = {
 		dots: false,
@@ -243,7 +267,11 @@ const HomePage = () => {
 							backgroundBlendMode: "multiply",
 						}}>
 						<div className='flex flex-col items-center  mt-[10%] leading-none z-20 '>
-							<div className='flex space-x-4 items-center gap-[32px] mb-[24px]'>
+							<div
+								className='flex space-x-4 items-center gap-[32px]'
+								style={{
+									marginBottom: useWindowSize().height < 700 ? "12px" : "24px",
+								}}>
 								<a
 									href='https://www.facebook.com/MentoBarberShop'
 									target='_blank'
@@ -277,13 +305,16 @@ const HomePage = () => {
 							</div>
 							<h1
 								className='text-textPrimary uppercase text-titleOne font-bold text-center'
-								style={{ fontSize: "2.95rem" }}>
+								style={{
+									fontSize:
+										useWindowSize().height < 700 ? "2.65rem" : "2.95rem",
+								}}>
 								mento barber
 							</h1>
 							<h1
 								className='uppercase font-bold text-center'
 								style={{
-									fontSize: "5rem",
+									fontSize: useWindowSize().height < 700 ? "4.5rem" : "5rem",
 									fontWeight: "bold",
 									textTransform: "uppercase",
 									color: "transparent",
@@ -294,15 +325,21 @@ const HomePage = () => {
 								bochnia
 							</h1>
 							<p
-								className='text-center text-[14px] text-gray-300 mb-[48px]'
-								style={{ lineHeight: 2 }}>
+								className='text-center text-[14px] text-gray-300'
+								style={{
+									lineHeight: 2,
+									width: "100%",
+									maxWidth: "500px",
+									margin: "0 auto",
+									marginBottom: useWindowSize().height < 700 ? "24px" : "48px",
+								}}>
 								MENTO Barber Bochnia Shop to znakomite miejsce, gdzie rzemiosło
 								spotyka się z pasją i profesjonalizmem. Nasza oferta skupia się
 								na perfekcyjnych męskich fryzurach, precyzyjnym strzyżeniu brody
 								oraz zadbanym zarostem.
 							</p>
-							<div className='flex flex-col items-center space-y-[12px] w-full'>
-								<div className='border-2 border-gray-400 rounded-full w-full py-[12px] px-5 text-textPrimary text-center'>
+							<div className='flex flex-col items-center space-y-[12px] w-full text-[12px]'>
+								<div className='border-2 border-gray-400 rounded-full w-full py-[12px] px-5 text-textPrimary text-center '>
 									Nad Babicą 2, Bochnia
 								</div>
 								<div className='border-2 border-gray-400 rounded-full w-full py-[12px] px-5 text-textPrimary text-center'>
@@ -313,7 +350,8 @@ const HomePage = () => {
 						<motion.img
 							src={Photo1}
 							alt='Background'
-							className='absolute inset-0 mx-auto top-20 w-[150%] h-auto object-contain pointer-events-none z-10'
+							className='absolute inset-0 mx-auto w-[150%] h-auto object-contain pointer-events-none z-10'
+							style={{ top: useWindowSize().height < 700 ? 40 : 80 }}
 							initial='hidden'
 							whileInView='visible'
 							viewport={{ once: true }}
