@@ -431,7 +431,7 @@ const HomePage = () => {
 							backgroundBlendMode: "multiply",
 						}}>
 						<motion.div
-							className='grid grid-cols-1 gap-2 w-full px-4 mb-[40px] z-10'
+							className='grid grid-cols-1 gap-2 w-full px-4 mb-[5%] z-10'
 							style={{ height: "83dvh" }}
 							initial='hidden'
 							whileInView='visible'
@@ -473,10 +473,10 @@ const HomePage = () => {
 										boxShadow: "0px 8px 10px #00000066",
 										opacity: 1,
 									}}>
-									<h3 className='font-bold' style={{ fontSize: "14px" }}>
+									<h3 className='font-bold' style={{ fontSize: "12px" }}>
 										{item.name}
 									</h3>
-									<p className='text-gray-300' style={{ fontSize: "14px" }}>
+									<p className='text-gray-300' style={{ fontSize: "10px" }}>
 										{item.price} | {item.time}
 									</p>
 								</div>
