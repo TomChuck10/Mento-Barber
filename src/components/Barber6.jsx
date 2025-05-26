@@ -105,7 +105,7 @@ const Barber6 = ({ slideInFromRight, fadeInFromLeft }) => {
 							}}>
 							JULIA
 						</h1>
-						<p className='mt-4 mb-20 max-w-[430px] text-[14px] font-light text-white text-center'>
+						<p className='mt-4 mb-[25%] max-w-[430px] text-[14px] font-light text-white text-center'>
 							Bardzo dobrze czuje sie w długich formach, pozwalaja na kreatywne
 							stylizacje, wymagające precyzyjnego cięcia i dopasowania do
 							indywidualnych potrzeb klienta. Uwielbiam tworzyc efekt

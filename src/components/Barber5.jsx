@@ -104,7 +104,7 @@ const Barber5 = ({ slideInFromRight, fadeInFromLeft }) => {
 							}}>
 							OLA
 						</h1>
-						<p className='mt-4 mb-20 max-w-[430px] text-[14px] font-light text-white text-center'>
+						<p className='mt-4 mb-[25%] max-w-[430px] text-[14px] font-light text-white text-center'>
 							Specjalizuję się w strzyżeniach męskich, a cieniowanie od zera to
 							moja ulubiona technika. Cenię dobrą rozmowę i świetny kontakt z
 							klientami, bo barbering to dla mnie nie tylko praca, ale też

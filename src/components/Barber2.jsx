@@ -105,7 +105,7 @@ const Barber2 = ({ slideInFromRight, fadeInFromLeft }) => {
 							}}>
 							KACPER
 						</h1>
-						<p className='mt-4 mb-[20%] max-w-[430px] text-[14px] font-light text-white text-center'>
+						<p className='mt-4 mb-[25%] max-w-[430px] text-[14px] font-light text-white text-center'>
 							Siema! Jestem Kacper – młody barber z pasją do cięcia. Uwielbiam
 							fryzury typu crop i ciągle rozwijam swoje umiejętności, byś zawsze
 							wychodził z fotela zadowolony. Sport to moja zajawka, a humor
