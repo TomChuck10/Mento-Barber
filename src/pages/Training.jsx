@@ -51,7 +51,7 @@ const Training = () => {
 			description:
 				"Perfekcyjny fade to podstawa nowoczesnego barberingu. W tym panelu skupimy się na technice cieniowania od zera, precyzyjnym przejściu tonalnym i odpowiednim doborze długości do kształtu głowy. Pokażemy, jak pracować z maszynką, trymerem i shaverem, by uzyskać idealne wykończenie. Szkolenie obejmuje zarówno teorię, jak i praktykę na modelach, abyś mógł doszlifować swoje umiejętności i zyskać pewność w pracy z krótkimi fryzurami.",
 			tutorial: "KRÓTKIE WŁOSY + CIENIOWANIE OD ZERA (FADE) - PLAN DNIA",
-			data: "6 lipca 2025",
+			data: "28 września 2025",
 			plan: (
 				<>
 					<div className='mb-[32px]'>
@@ -137,7 +137,7 @@ const Training = () => {
 			description:
 				"Idealnie przycięta broda to nie tylko estetyka, ale i komfort klienta. W tym panelu nauczysz się cieniowania brody, jej konturowania i odpowiedniego skracania, by dopasować kształt do rysów twarzy. Skupimy się także na tonowaniu i pielęgnacji zarostu, aby uzyskać naturalny, zdrowy wygląd. Podczas praktycznej części dowiesz się, jak pracować maszynka , trymerem, brzytwą i nożyczkami, by broda wyglądała perfekcyjnie i była dopasowana do stylu klienta.",
 			tutorial: "BRODY: CIENIOWANIE • MODELOWANIE • TONOWANIE - PLAN DNIA",
-			data: "24 maja 2025",
+			data: "24 sierpnia 2025",
 			plan: (
 				<>
 					<div className='mb-[32px]'>
