@@ -1,13 +1,13 @@
 import PropTypes from "prop-types";
 
 import Gradient from "../assets/gradient.svg";
-import Barber from "../assets/barber7.png";
+import Barber from "../assets/barber8.png";
 import Texture from "../assets/texture.png";
 import { motion } from "framer-motion";
 
 import { useIsMobile } from "../Hooks/useIsMobile";
 
-const Barber7 = ({ slideInFromRight, fadeInFromLeft }) => {
+const Barber8 = ({ slideInFromRight, fadeInFromLeft }) => {
   const isMobile = useIsMobile();
 
   return (
@@ -42,14 +42,14 @@ const Barber7 = ({ slideInFromRight, fadeInFromLeft }) => {
                   "0 0 0px #0B0C0F, 0 0 0px #0B0C0F, 0 0 10px #E67543",
               }}
             >
-              GABI
+              KRYSTIAN
             </h1>
             <p className="mt-4 max-w-[430px] text-[15px] font-light">
-              Lubię pracować nad fryzurami modernistycznymi, z teksturą, tak by
-              finalny efekt wyglądał świeżo i ciekawie. Tak by fryzura mogła
-              wyglądać dobrze z układaniem jak i bez. Bardzo dobrze czuję się
-              przy fryzurach typu french crop, ale klasykę w postaci side part
-              również często i chętnie ścinam.
+              Cześć! Mam na imię Krystian i jestem młodym barberem w Mento. To
+              tutaj rozwijam swoje umiejętności i pasję do fryzjerstwa męskiego.
+              Lubię wyzwania i nie boję się nowych doświadczeń. Po godzinach
+              odpalam trochę inną pasję – muzykę. Uwielbiam grać na
+              instrumentach i to daje mi dodatkową energię.
             </p>
           </motion.div>
           <motion.div
@@ -70,7 +70,7 @@ const Barber7 = ({ slideInFromRight, fadeInFromLeft }) => {
                 whiteSpace: "nowrap",
               }}
             >
-              GABI
+              KRYSTIAN
             </h1>
           </motion.div>
           <img
@@ -82,8 +82,14 @@ const Barber7 = ({ slideInFromRight, fadeInFromLeft }) => {
           <img
             src={Barber}
             alt="Background"
-            className="absolute bottom-0 right-0 w-1/2 h-auto pointer-events-none"
-            style={{ bottom: -200, right: -90, zIndex: 1 }}
+            className="absolute bottom-0 right-0 pointer-events-none"
+            style={{
+              bottom: "-28vh",
+              right: "3vw",
+              zIndex: 1,
+              width: "37.5vw",
+              height: "auto",
+            }}
           />
         </div>
       ) : (
@@ -101,7 +107,7 @@ const Barber7 = ({ slideInFromRight, fadeInFromLeft }) => {
             <h1
               className="font-bold uppercase text-center"
               style={{
-                fontSize: "25vw", // Zmieniono na jednostkę vw, aby dopasować do szerokości ekranu
+                fontSize: "18vw",
                 fontWeight: "bold",
                 color: "transparent",
                 WebkitTextStroke: "2px #ff6600",
@@ -109,21 +115,21 @@ const Barber7 = ({ slideInFromRight, fadeInFromLeft }) => {
                 whiteSpace: "nowrap",
               }}
             >
-              GABI
+              KRYSTIAN
             </h1>
             <p className="mt-4 mb-[25%] max-w-[430px] text-[14px] font-light text-white text-center">
-              Lubię pracować nad fryzurami modernistycznymi, z teksturą, tak by
-              finalny efekt wyglądał świeżo i ciekawie. Tak by fryzura mogła
-              wyglądać dobrze z układaniem jak i bez. Bardzo dobrze czuję się
-              przy fryzurach typu french crop, ale klasykę w postaci side part
-              również często i chętnie ścinam.
+              Cześć! Mam na imię Krystian i jestem młodym barberem w Mento. To
+              tutaj rozwijam swoje umiejętności i pasję do fryzjerstwa męskiego.
+              Lubię wyzwania i nie boję się nowych doświadczeń. Po godzinach
+              odpalam trochę inną pasję – muzykę. Uwielbiam grać na
+              instrumentach i to daje mi dodatkową energię.
             </p>
           </div>
           <img
             src={Barber}
             alt="Background"
-            className="absolute top-0 w-[700px] max-w-none z-10" // Added maxWidth constraint
-            style={{ right: "-125px", top: "-225px" }}
+            className="absolute top-0 w-[500px] max-w-none z-10"
+            style={{ right: "-70px", top: "50px" }}
           />
           <img
             src={Gradient}
@@ -144,9 +150,9 @@ const Barber7 = ({ slideInFromRight, fadeInFromLeft }) => {
   );
 };
 
-export default Barber7;
+export default Barber8;
 
-Barber7.propTypes = {
+Barber8.propTypes = {
   slideInFromRight: PropTypes.object,
   fadeInFromLeft: PropTypes.object,
 };
