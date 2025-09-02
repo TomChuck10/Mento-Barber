@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mentobarber.pl/sitemap.xml
