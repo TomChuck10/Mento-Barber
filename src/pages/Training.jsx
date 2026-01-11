@@ -8,7 +8,6 @@ import { useIsMobile } from "../Hooks/useIsMobile";
 
 // Assets
 import ShortHair from "../assets/shortHair.png";
-import LongHair from "../assets/longHair.png";
 import Beard from "../assets/beard.png";
 import Model1 from "../assets/models/model1.jpg";
 import Model2 from "../assets/models/model2.jpg";
@@ -98,7 +97,7 @@ const Training = () => {
       ),
     },
     {
-      photo: LongHair,
+      photo: Beard,
       title: "COMBO włosy + broda (2 dni)",
       description:
         "Dwudniowe szkolenie COMBO włosy + broda to kompleksowy program dla barberów, którzy chcą pracować świadomie, technicznie i pewnie zarówno przy strzyżeniu włosów, jak i przy wykonywaniu brody. Podczas szkolenia uczestnicy poznają pełny proces pracy z klientem – od analizy głowy, proporcji i kształtu fryzury, po dobór odpowiedniej formy brody dopasowanej do twarzy i stylu klienta. Program łączy teorię, wykład oraz intensywną praktykę, dzięki czemu wiedza od razu przekładana jest na realną pracę przy fotelu.",
